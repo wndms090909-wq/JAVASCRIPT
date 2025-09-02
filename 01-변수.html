@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 이름, 나이, 성별, 취미를 저장할 변수 만들기
+        // var 변수명 - 값
+        var userName = "홍길동";
+        var userAge = 20;
+        // ture(참)-> 1, false(거짓) -> 0
+        var userGender = true;
+        // 값이 없는 상태 변수 선언 undefined라고 한다
+        var userHobby;
+        console.log(userName);
+        console.log(userAge);
+        console.log(userGender);
+
+        //  변수 재선언하기
+        var userName = "김철수";
+        console.log(userName);
+        // 재선언 없이 변수 값 변경하기
+        userName = "김영희";
+        console.log(userName);
+        // userHobby 출력
+        console.log(userHobby);
+
+        // userAge 데이터 비우기
+        userAge = null;
+        console.log(userAge);
+
+        // let으로 변수를 선언하기 나라, 도시를 저장할 변수 만들기
+        let country = "대한민국";
+        let city = "서울";
+        console.log(country);
+        console.log(city);
+        // 재선언 불가
+        // let country="일본";
+        country = "일본";
+        console.log(country);
+        // 3. const로 변수 선언하기
+        // const는 상수를 저장할때 사용한다
+        // 재선언,재할당 불가
+        // 상수명을 대문자로 주로 작성 변수외 구별하기 위해
+        const PI = 3.14;
+        console.log(PI);
+        // 재선언 불가
+        // const PI=3.141592;
+        // 재할당 불가
+        PI = 3.153675
+    </script>
+</head>
+
+<body>
+    <h1>변수</h1>
+    <p>변할 수 있는 데이터를 저장하는 공간</p>
+    <p>변수는 var, let, const로 선언하여 사용한다</p>
+    <p>1. var 재선언, 재할당 가능, 재선언 시 덮어쓰기가 된다</p>
+    <p>2. let 재선언이 안됨, 재할당 가능 - 위에서 사용한 변수를 덮어쓸 오류방지</p>
+    <p>3. const 재선언, 재혈당 둘다 안됨
+        상수로 사용되는 데이터를 저장할때 사용한다
+    </p>
+</body>
+
+</html>
