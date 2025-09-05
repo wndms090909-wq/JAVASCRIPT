@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 키를 입력받아서 변수에 저장하기
+        // 몸무게 입력 받아서 변수에 저장하기
+        // 적정몸무게 : (키-100)*0.9 +-5
+        // 적정몸무게 - 5 <= 내 몸무게 <= + 5
+        // 삼항조건연산자
+        // 조건문 ? 참일때 : 거짓일때;
+        // 범위에 들어가면 "정상" 들어가지 않으면 "운동하세요!"
+        let height = +prompt("당신의 키를 입력하세요", "");
+        let weight = +prompt("당신의 몸무게를 입력하세요", "");
+        let sWeight = (height - 100) * 0.9;
+        // console.log(total);
+        
+        sWeight -5 <= weight && weight <=sWeight +5 ? document.write("<h1>정상</h1>") : document.write("<h1>운동하세요</h1>");
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

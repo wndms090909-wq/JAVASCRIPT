@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/07-assign.js"></script>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            /* 선을 겹치게 함 */
+            border-collapse:collapse;
+        }
+        th{
+            border-bottom: none;
+        }
+        th:first-child {
+            border-left: 1px solid transparent;
+        }
+        th:last-child {
+            border-right: 1px solid transparent;
+        }
+        table{
+            border-top: 2px solid blue;
+            border-bottom: 1px solid #ccc;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1>대입연산자</h1>
+    <p>= : 오른쪽에 있는 요소를 완쪽에 넣어라</p>
+    <p>+= : 왼쪽에 있는 변수에 오른쪽에 있는 내용을 더해서 왼쪽에 넣어라</p>
+    <p>-= : 왼쪽에 있는 변수에 오른쪽에 있는 내용을 빼서 왼쪽에 넣어라</p>
+    <p>*= : 왼쪽에 있는 변수에 오른쪽에 있는 내용을 곱해서 왼쪽에 넣어라</p>
+    <p>/= : 왼쪽에 있는 변수에 오른쪽에 있는 내용을 나눠서 왼쪽에 넣어라</p>
+    <p>%= : 왼쪽에 있는 변수에 오른쪽에 있는 내용을 나눈 나머지를 왼쪽에 넣어라</p>
+
+    <table>
+        <tr>
+            <th>1</th>
+            <th>2</th>
+            <th>3</th>
+        </tr>
+    </table>
+</body>
+
+</html>

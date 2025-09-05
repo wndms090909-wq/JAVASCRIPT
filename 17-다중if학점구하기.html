@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+         점수 90~100 A
+         80~89 B
+         70~79 C
+         60~69 D
+         그 나머지는 F
+         */
+        let score = +prompt("점수를 입력하세요", "");
+        if (score >= 90) {
+            document.write("A");
+        }
+        else if (score >= 80) {
+            document.write("B");
+        }
+        else if (score >= 70) {
+            document.write("C");
+        }
+        else if (score >= 60) {
+            document.write("D");
+        }
+        else {
+            document.write("F");
+        }
+    </script>
+</head>
+
+<body>
+    <h1>다중if</h1>
+    <p>조건이 여러개인 경우</p>
+    <pre>
+        <!-- pre = 프리뷰 약자 -->
+        if(조건문1){
+            조건문1이 참일때 실행할 문장;
+        }
+        else if(조건문2){
+            조건문1은 거짓이고, 조건문2이 참일때 실행할 문장;
+        }
+        else if (조건문3){
+            조건문1 거짓, 조건문2 거짓, 조건문3이 참일때 실행할 문장;
+        }
+        else{
+            위의 3개 조건을 다 만족못했을때 실행할 문장;
+        }
+    </pre>
+</body>
+
+</html>

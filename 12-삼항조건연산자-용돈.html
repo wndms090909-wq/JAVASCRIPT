@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //차비, 식비, 간식비를 입력받아서
+        //합계 20000원이 넘어가면 "용돈 관리가 필요합니다"
+        //이하면 "참 잘했어요!"를 출력하기
+        //prompt를 통해서 입력받은 데이터는 문자이므로 계산을 위해서는 숫자로 변경해야한다
+        //prompt 앞에 +를 붙이면 숫자가 된다
+        //차비
+        let bmw = +prompt("교통비를 입력하세요", "");
+        //식비
+        let lunch = +prompt("점심비를 입력하세요", "");
+        //간식비
+        let drink = +prompt("간식비를 입력하세요", "")
+        //앞에서 입력한 값들의 합계
+        let total = bmw + lunch + drink;
+        console.log(total);
+        // 조건문 ? 참일떄실행:거짓일때 실행;
+        total >= 20000 ? document.write("용돈관리가 필요합니다") : document.write("참 잘했어요!");
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

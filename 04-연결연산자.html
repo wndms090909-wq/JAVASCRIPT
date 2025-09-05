@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 연결 연산에 필요한 변수 만들기 
+        let nation = "korea"
+        let city = "seoul"
+        let year = 2025;
+        let month = 9;
+
+        // 숫자+숫자
+        console.log(year + month);
+        // 숫자+문자
+        console.log(year + city);
+        // 문자+숫자
+        console.log(nation + month);
+        // 문자+문자
+        console.log(nation + city);
+
+        let dan = 9;
+        let num = 2;
+
+        // 9*2 = 18
+        console.log(dan + "*" + num + "=" + (dan * num));
+
+        // 템플릿 문자열 (백틱(~키), ``)
+        console.log(`${dan}*${num}=${dan*num}`)
+    </script>
+</head>
+<body>
+    <h1>연결연산자</h1>
+    <p>+ : +를 기준으로 앞 또는 뒤에 문자가 올 경우(이전방식)</p>
+</body>
+
+</html>
