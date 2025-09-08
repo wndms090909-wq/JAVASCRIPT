@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,
+        td {
+            border: 1px solid #555;
+        }
+
+        table {
+            width: 400px;
+            height: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <h2>일정표</h2>
+        <table id="calendar"></table>
+    </section>
+
+    <script>
+        //숫자
+        let num = 1;
+
+        //html에 만들어놓은 #calendar를 선택하여 여기에 줄칸 만들기
+        // let cal = document.getElementById("calendar"); 옛날버전
+        let cal = document.querySelector("#calendar");
+        for (let i = 1; i <= 5; i++) {
+            let row = cal.insertRow(); // <tr> 생성
+            for (j = 1; j <= 7; j++) {
+                let cell = row.insertCell(); // <td> 생성
+                    cell.textContent = num++;
+            }
+        }
+
+    </script>
+</body>
+
+</html>

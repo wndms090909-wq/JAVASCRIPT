@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,
+        td {
+            border: 1px solid #555;
+        }
+
+        table {
+            width: 400px;
+            height: 300px;
+        }
+    </style>
+    <script>
+        // 달력안에 들어가는 숫자 변수
+        let num = 1;
+        //달력 5줄 7칸 테이블
+        let cal = "<table>";
+        for (let i = 1; i <= 5; i++) {
+            cal += "<tr>";
+            for (let j = 1; j <= 7; j++) {
+                // cal += "<td>1</td>";
+                cal += `<td>${num++}</td>`;
+            }
+            cal += "</tr>";
+        }
+        cal += "</table>";
+        document.write(cal);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

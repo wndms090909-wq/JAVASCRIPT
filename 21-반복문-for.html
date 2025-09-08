@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // document.write("오늘은 월요일<br>");
+        // document.write("오늘은 월요일<br>");
+        // document.write("오늘은 월요일<br>");
+        // document.write("오늘은 월요일<br>");
+        // document.write("오늘은 월요일<br>");
+        // document.write("오늘은 월요일<br>");
+        // document.write("오늘은 월요일<br>");
+        // document.write("오늘은 월요일<br>");
+        // document.write("오늘은 월요일<br>");
+        // document.write("오늘은 월요일<br>");
+        //i = 변수 / 조건문 = 반복할 횟수 / 닫는 괄호를 만나면 증감식으로 돌아감
+        // i=index 약자, 반복문엔 i 씀 
+        for (let i = 1; i <= 10; i++) {
+            document.write("오늘은 월요일입니다<br>");
+        }
+        //월요일은 갈 10 ~ 1
+        for (let i = 10; i >= 1; i--) {
+            // document.write("월요일 bye"+i+"<br>")
+            document.write(`월요일 bye ${i} <br>`); //최근은 이렇게 씀
+        }
+    </script>
+</head>
+
+<body>
+    <h1>반복문</h1>
+    <p>같은 명령어를 여러번 반복해서 실행할 때 사용한다</p>
+    <p>문서에 "오늘은 월요일" 10번 출력하기</p>
+    <p>"월요일은 가라10" "월요일은 가라9"</p>
+    <pre>
+        for(반복문을 체크할 변수 ; 반복문을 빠져나올 조건문; 변수증감식){
+            반복할 명령어/문장/;
+        }
+    </pre>
+    
+    <p>for는 명령어가 끝나면 끝남 지역변수 그래서 let으로 선언할 수 있음</p>
+</body>
+
+</html>
