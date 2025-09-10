@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let num1 = 3.14;
+        let num2 = "10";
+        let num3 = "1.52";
+        let num4 = 1.9876;
+        //num1 + num2 
+        //문자를 숫자로 변환 - Number, parseInt
+        // document.write(num1 + Number(num2) + "<br>");
+        document.write(num1 + parseInt(num2) + "<br>");
+
+        // document.write(num1 + Number(num3) +"<br>");
+        document.write(num1 + parseInt(num3) +"<br>");
+        document.write(num1 + parseFloat(num3) +"<br>");
+
+        //num4의 숫자를 소수점 2째자리 구하기
+        //소수점 자리수
+        document.write(num4.toFixed(2)+ "<br>")
+        //전체 자리수
+        document.write(num4.toPrecision(3)+ "<br>")
+    </script>
+</head>
+
+<body>
+    <p>parseInt = 정수</p>
+    <p>parseFloat = 소수점도 포함</p>
+</body>
+
+</html>

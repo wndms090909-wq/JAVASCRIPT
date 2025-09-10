@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //내장객체 - Date 날짜와 관련된 정보를 제공한다
+        //현재 시스템이 기억하는 오늘의 날짜 정보 가져오기
+        let today = new Date();
+        console.log(today); // 년도, 월, 일, 요일, 시간, 분, 초, 밀리초
+
+        //년도
+        let year = today.getFullYear();
+        console.log(year);
+
+        //월
+        //순서를 0부터 체크한다
+        //0번째달-1월 1번째달-2월 8-9월달
+        let month = today.getMonth();//8
+        console.log(month)
+
+        //일
+        let theDay = today.getDate();
+        console.log(theDay);
+
+        //요일
+        // 0: 일, 1: 월, 2:화, 3:수, 4:목, 5:금, 6:토 
+        let day = today.getDay();
+        console.log(day);
+
+        //시간
+        let hours = today.getHours();
+        console.log(hours);
+
+        //분    
+        let m = today.getMinutes();
+        console.log(m);
+
+        //초
+        let seconds = today.getSeconds();
+        console.log(seconds);
+
+        //날짜 전체
+        let date = today.toLocaleDateString();
+        console.log(date); // 2025.9.9
+
+        //시간 전체
+        let time = today.toLocaleTimeString();
+        console.log(time); //오전 10:41:50
+    </script>
+</head>
+<body>
+    <h1>내장객체</h1>
+    <p>자바스크립트에서 제공해주는 객체를 뜻한다</p>
+    <p>new 연산자로 선언해서 사용한다</p>
+    <p>제공된 객체는 첫글자가 대문자로 되어있다</p>
+    <p>Date 객체</p>
+</body>
+</html>

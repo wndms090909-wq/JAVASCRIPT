@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 특정날짜에 대한 정보 얻어오기
+        //2025.12.30
+        let dDay = new Date(2025, 11, 30);
+
+        // 오늘 날짜 정보 얻어오기
+        let today = new Date();
+
+        // 디데이 구하기 특정날짜-오늘날짜
+        let diff = dDay - today;
+        console.log(diff);
+
+        // 24*60*60*1000
+        let count = diff / (24 * 60 * 60 * 1000);
+        console.log(count); //총 일수
+
+        //평일
+        //(총 일수) - (총 일수/7*2)
+        console.log(count - count / 7 * 2);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

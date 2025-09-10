@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //메뉴를 저장할 배열
+        let menus = ["도시락", "차돌된장", "순대국", "동태탕", "카레", "초밥", "라면"];
+        let count = menus.length;
+        //임의의 숫자를 발생시키기 0~1 => 0~6 나와야함
+        let rnd = Math.random()*count;
+        console.log(rnd);
+
+        //소수점 버리기
+        let num = Math.floor(rnd);
+        console.log(num);
+
+        document.write(`오늘의 추천 메뉴는 ${menus[num]} 입니다`);
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

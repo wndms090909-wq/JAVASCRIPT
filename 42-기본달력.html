@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid #777;
+            /* 선이 겹치게 함 */
+            border-collapse: collapse;
+        }
+    </style>
+    <script>
+        //오늘의 날짜 정보 저장하는 변수
+        let today = new Date();
+        console.log(today);
+        //년도
+        let year = today.getFullYear();
+        console.log(year);
+        //월
+        let month = today.getMonth();
+        console.log(month);
+        //일수 각달의 마지막날을 저장할 배열
+        let lastDate = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+        //이번달 1일이 무슨 요일인지 
+        let thisDay = new Date(year, month, 1);
+        //무슨 요일인지?
+        let thisWeek = thisDay.getDay();
+        console.log(thisWeek);
+
+        //달력줄수 계산
+        //4줄 1일 0 마지막 날짜 28 (0+28)/7
+        //5줄 1일 1 마지막 날짜 30, 1일 1 마지막 28 (1+30)/7 = 4.xx (1+28)/7 4.xx
+        //6줄 1일 5 마지막날 31, 1일 6 마지막 30 (5+31)/7 5.xxx (6+30)/7 5.xxx
+        let row = Math.ceil((thisWeek + lastDate[month]) / 7);
+        console.log(row);
+
+
+        //달력안에 출력할 숫자
+        let num = 1;
+        //달력을 저장할 변수
+        let cal = "<table>";
+        cal += "<tr>";
+        cal += "<th>일</th><th>월</th><th>화</th><th>수</th><th>목</th><th>금</th><th>토</th>"
+        cal += "</tr>";
+
+        //줄
+        for (let i = 0; i < row; i++) {
+            cal += "<tr>";
+            //칸
+            for (let j = 0; j < 7; j++) {
+                //첫번째줄이면서, 이번달 1일의 요일번째보다 작은면 빈칸 || 마지막날보다 크면 빈칸
+                if (i == 0 && thisWeek > j || num>lastDate[month]) {
+                    cal += "<td></td>";
+                }
+                else {
+                    cal += `<td>${num++}</td>`;
+                }
+            }
+            cal += "</tr>";
+        }
+        cal += "</table>";
+
+        document.write(cal);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
