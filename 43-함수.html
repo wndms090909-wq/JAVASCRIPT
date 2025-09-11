@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //선언적함수
+        hi();
+        //하이 함수! 출력하기
+        //선언전에 미리 호출할 수 있다 = 호이스팅이 가능
+        function hi() {
+            document.write("하이 선언적함수!<br>");
+        }
+
+
+        //함수표현식
+        //선언전에 미리 호출할 수 없다 = 호이스팅이 불가능
+        let 안녕 = function () {
+            document.write("안녕 함수표현식아~<br>")
+        }
+        안녕();
+
+
+    </script>
+</head>
+
+<body>
+    <h1>함수</h1>
+    <p>자주 사용되는 프로그램들을 별도로 모아서 선언해 놓은것을 말한다</p>
+
+    <h2>함수의 종류</h2>
+    <p>선언적함수(명명함수)</p>
+    <pre>
+        function 함수이름(){
+            반복적으로 실행할 명령어;
+        }
+    </pre>
+    <p>함수표현식(익명함수)</p>
+    <pre>
+        let 함수명 = function(){
+            반복적으로 실행할 명령어;
+        }
+    </pre>
+    <p>화살표함수</p>
+</body>
+
+</html>

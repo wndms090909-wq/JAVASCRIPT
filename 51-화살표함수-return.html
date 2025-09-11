@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //숫자 return 5*5
+        //1. 일반함수
+        function sum1(num) {
+            return num * num;
+        }
+        // let total = sum1(5);
+        document.write(sum1(5) + "<br>");
+
+        //2. 선언적함수
+        let sum2 = function (count) {
+            return count * count;
+        }
+        let sumTotal = sum2(3);
+        document.write(sumTotal + "<br>");
+
+        //3. 화살표함수
+        //반환값이 있어서 실행할 문장이 하나면 return 생략가능
+        // let sum3 = num => {return num*num;}
+        let sum3 = num => num * num;
+
+        let sum3Total = sum3(4);
+        document.write(sum3Total);
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

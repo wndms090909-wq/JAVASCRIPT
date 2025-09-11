@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //누구야 안녕
+        //1. 선언적 함수 일반함수
+        function hi1() {
+            document.write("일반함수, 선언적함수 안녕 <br>")
+        }
+
+        //2. 변수형, 익명함수
+        let hi2 = function () {
+            document.write("변수형 익명함수, 안녕 <br>")
+        }
+
+        //3. 화살표함수
+        let hi3 = () => {
+            document.write("화살표함수");
+        }
+
+        hi1();
+        hi2();
+        hi3();
+    </script>
+</head>
+
+<body>
+    <h1>화살표함수</h1>
+    <p>기존 함수를 간결하게 사용하려고 도입됨 es6</p>
+    <p>최근에 많이씀</p>
+</body>
+
+</html>

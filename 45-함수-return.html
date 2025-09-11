@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //변수, 전역변수, 지역변수
+        //전역변수 - 모든 영역에서 사용하는 변수
+        //지역변수 - 특정함수에서, for에서 선언한 변수로 그 안에서만 사용가능
+        //두수를 입력받아서 합계를 구하는 함수
+        function sum(a, b) {
+            //합계를 저장할 변수 선언
+            let total = a + b;
+            return total;
+            //함수 실행이 끝나면, 내부의 a, b, total은 모두 메모리에서 사라집니다.
+        }
+
+        //전역변수
+        //함수가 반환한 15가 전역변수 total에 저장됩니다.
+        //이제 전역 스코프에는 total = 15 만 남습니다.
+        let total = sum(10, 5);
+        document.write(total);
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //body의 배경색을 변경하는 함수 만들기
+        let colorBg = function (color) {
+            let bd = document.querySelector("body");
+            // bd.style.backgroundColor = color;
+            bd.style["background-color"] = color
+        }
+
+    </script>
+</head>
+
+<body>
+    <button onclick="colorBg('pink')">pink</button>
+    <button onclick="colorBg('skyblue')">skyblue</button>
+    <button onclick="colorBg('green')">green</button>
+    <button onclick="colorBg('orange')">orange</button>
+</body>
+
+</html>
