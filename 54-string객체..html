@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //문자열 선언하기 
+        let str = new String("Html! Css3 Javascript");
+        //바로 사용하기
+        let str2 = "typejavascript~~ react!!";
+        //특정위치의 문자 하나 추출 charAt(위치)
+        //str에서 4번째 문자 추출
+        document.write(str.charAt(4) + "<br>");
+        //특정위치의 문자 여러개 추출 
+        //substr(시작위치, 길이)
+        document.write(str.substr(6, 4) + "<br>");
+        //substring(시작위치, 끝위치) 끝위치-1 된곳까지
+        document.write(str.substring(6, 10) + "<br>");
+
+        //특정문자 찾기 str2에서 p위치값 반환
+        //indexof - 위치값, 없으면 -1 반환
+        document.write(str2.indexOf("p") + "<br>");
+        //search - 위치값, 없으면 -1 반환
+        document.write(str2.search("p") + "<br>");
+        //match - 문자열이나 null값 반환
+        document.write(str2.match("p") + "<br>");
+
+        //없는 b 찾기
+        document.write(str2.indexOf("b") + "<br>");
+
+        //대문자로 변경
+        document.write(str2.toUpperCase() + "<br>");
+        //소문자로 변경
+        document.write(str2.toLocaleLowerCase() + "<br>");
+
+        //반복문자 만들기 .repeat(반복횟수);
+        let uName = "홍길동!";
+        //홍길동! 홍길동! 홍길동!
+        document.write(`${uName.repeat(3)} 월요일이라~~`)
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

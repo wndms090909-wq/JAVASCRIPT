@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let count = 0;
+        function repeat(){
+            count++;
+            console.log(`${count}번째`);
+
+            setTimeout(repeat, 1000);
+        }
+
+        repeat();
+    </script>
+</head>
+<body>
+     <h1>setTimeout</h1>
+     <p>일정시간이 지난후 한번 실행</p>
+     <p>setInterval처럼 일정 시간 마다 반복해서 실행 - 재귀함수</p>
+     <p>재귀호출함수 - 자기 자신을 호출</p>
+</body>
+</html>

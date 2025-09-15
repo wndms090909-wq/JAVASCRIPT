@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //이름 영어로, 전화번호 입력받기
+        //이름을 대문자로 변경시켜서 표기
+        //전화번호는 끝자리 4를 ****로 표기
+        //1. 이름을 저장
+        let userName = prompt("당신의 이름을 영어로 입력하세요", "예)hong gil dong");
+        //2. 전화번호를 저장
+        let userPhone = prompt("핸드폰번호를 - 없이 입력하세요", "예)01012345678");
+        
+        //이름출력
+        document.write(`당신의 이름은 ${userName.toUpperCase()}<br>`);
+        //전화번호 앞자리는 보여주고 마지막4자리는 ****로 표기
+        //전화번호 문자에서 앞에서부터 전체전화번호길이 -4한것을 보여주고, 나머지 4개는 ****
+        let tel = userPhone.substr(0,userPhone.length-4)+ "*".repeat(4);
+        document.write(`당신의 전화번호는 ${tel}`);
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //배열은 하나의 이름에 여러개의 데이터를 저장하는 공간
+        //문자, 숫자, boolean, null, undefined, object, array
+        let data = [10, 5, "홍길동", "금요일", "우산", null, true];
+        //문자열 선언하기
+        let str = "es6!";
+
+        //객체 = object
+        let TV = {
+            brand: "삼성",
+            inch: 80,
+            flat: "flat",
+            on: function () {
+                alert("TV가 켜짐");
+            },
+            off: function () {
+                alert("TV가 꺼짐");
+            }
+        }
+
+        //for 
+        for (let i = 0; i < data.length; i++) {
+            document.write(data[i] + "<br>");
+        }
+        document.write("<hr>");
+
+        //for~ in
+        //배열, 문자열, 객체
+        //for(순서를체크할변수 in 배열명)
+        for (let i in data) {
+            document.write(data[i] + "<br>");
+        }
+        document.write("<hr>");
+
+        //for~ in 문자열 출력하기
+        for (let i in str) {
+            document.write(str[i] + "<br>")
+        }
+        document.write("<hr>");
+
+        //for~ of
+        //배열, 문자열에서 사용, 객체는 사용불가
+        //for(배열의데이터를저장할변수 of 배열명)
+        for (let item of data) {
+            document.write(item + "<br>");
+        }
+        document.write("<hr>");
+
+        //for~ of 문자열 출력하기
+        for (let st of str) {
+            document.write(st + "<br>");
+        }
+        document.write("<hr>");
+
+        //for~ in으로 TV객체 출력하기
+        for(let i in TV){
+            document.write(`${i} : `);
+            document.write(`${TV[i]}<br>`);
+        }
+
+        // forEach 배열에서만 사용가능
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //접속한 브라우저의 정보를 받아서
+        //pc, 안드로이드, 아이폰 접속 확인하기
+        let site = navigator.userAgent;
+        //site 안에  Windows -> pc
+        //Android -> 모바일 안드로이드폰
+        //iphone -> 모바일 아이폰
+        if (site.indexOf("Windows") > 0) {
+            document.write("pc접속")
+            //주소뜨는거바꿔줌 내용도 연결됨
+            location.href = "./pc.html"
+        }
+        else if (site.indexOf("Android") > 0) {
+            document.write("안드로이드폰 접속")
+            location.assign("http://uxuieztest.dothome.co.kr/mobile.html");
+        }
+        else {
+            document.write("iPhone 접속");
+            location.assign("http://uxuieztest.dothome.co.kr/mobile.html");
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <script>
+        const scores = [85, 92, 76, 88, 64, 95, 71];
+        const students = ['김철수', '이영희', '박민수', '최지영', '정태호', '한소영', '윤대현'];
+
+        // 등급 계산 함수
+        function grd(score) {
+            if (score >= 90) return "A";
+            else if (score >= 80) return "B";
+            else if (score >= 70) return "C";
+            else if (score >= 60) return "D";
+            else return "F";
+        }
+
+        let totalScore = 0;
+        let passCount = 0;
+
+        for (let i = 0; i < students.length; i++) {
+            let name = students[i];
+            let score = scores[i];
+            let grade = grd(score);
+            let pass = score >= 70 ? "합격" : "불합격";
+
+            totalScore += score;
+            if (score >= 70) passCount++;
+
+            document.write(`이름: ${name}, 점수: ${score}, 등급: ${grade}, 합격여부: ${pass}<br>`);
+        }
+
+        const average = totalScore / scores.length;
+
+        document.write(`전체 평균 점수: ${Math.floor(average)}<br>`);
+        document.write(`합격자 수: ${passCount}명<br>`);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

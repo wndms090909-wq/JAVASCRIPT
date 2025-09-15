@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //setInterval 일정시간마다 명령을 반복해서 실행할때 사용한다
+        //1초마다 콘솔창에 1씩 증가되는 숫자 출력하기
+        let count = 1;
+        //변수 = 이름주기
+        let timer1 = window.setInterval("console.log(count++)", 1000);
+
+        let num = 10;
+        // function numCount(){
+        //     console.log(num++);
+        // }
+
+        let numCount = () => {
+            console.log(num++);
+        }
+
+        let timer2 = window.setInterval(numCount, 1000);
+    </script>
+</head>
+
+<body>
+    <button onclick="clearInterval(timer1);">stop1</button>
+    <button onclick="clearInterval(timer2);">stop2</button>
+
+    <pre>
+        window.setInterval("실행할 명령어", 시간)
+        window.setInterval(함수명, 시간);
+        window.setInterval(() => {}, 시간);
+        시간:ms 단위를 사용함 1초 = 1000ms
+    </pre>
+</body>
+
+</html>

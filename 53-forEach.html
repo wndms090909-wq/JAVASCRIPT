@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //비와 관련된 요소 배열로 만들기
+        const rains = ["우산", "우비", "장화", "무지개"];
+        const fruits = ["포도", "사과", "배", "감"];
+
+        //기본 함수로
+        rains.forEach(function (item) {
+            document.write(item + "<br>");
+        })
+        document.write("<hr>");
+
+        //화살표함수로 
+        rains.forEach(item => document.write(item + "<br>"));
+        document.write("<hr>");
+        
+        //for~ in처럼 씀, 매개변수 순차적으로만 사용 가능하다
+        fruits.forEach((id,arr) =>{
+            document.write(id+arr+"<br>")
+        })
+
+        //배열의 들어있는 데이터 중 "ab"인 요소를 찾아서 하트로 변경
+        let str =["ab", "bb","cc", "ab","dd","ab"];
+        str.forEach((item,id,arr) =>{
+            if(item == "ab"){
+                arr[id] = "⭐";
+            }
+        })
+        document.write(str);
+        document.write("<hr>");
+
+        //users 배열 객체
+        let users = [
+            {name: "김철수", age:30},
+            {name:"홍길동",age:16},
+            {name:"영희", age:23}
+        ];
+
+        users.forEach(aa =>{
+            document.write(`${aa} ${aa.name} ${aa.age}<br>`);
+        })
+
+
+
+    </script>
+</head>
+
+<body>
+    <h1>forEach</h1>
+    <p>배열의 있는 데이터를 순차적으로 실행</p>
+    <pre>
+        배열명.forEach((요소, 순서, 매개변수배열명) => 명령어;)
+    </pre>
+    <p>매개변수 배열명 : 새로운 데이터를 저장하는 배열명 -> 임시적으로 저장, 배열명 둘이 다름</p>
+    <p>배열만가능</p>
+</body>
+
+</html>
