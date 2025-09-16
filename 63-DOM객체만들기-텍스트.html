@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //body를 체크하기 전에 body를 찾아서 에러가 남
+        //문서를 전부 읽은 다음에 스크립트를 실행하도록
+        //window.onload = function () {} 옛날 방식
+        //window.addEventListener("load", function(){}) => 페이지를 완전히 다 읽은 다음 실행
+        //document.addEventListener("DOMContentLoaded", function(){}) => 이미지, 스타일시트는 기다리지 않음
+        document.addEventListener("DOMContentLoaded", function () {
+            //<h1>dom 객체생성</h1>
+            //1. 태그생성하기
+            let hTitle = document.createElement("h1");
+            //2. 생성된 태그에 넣을 text 만들기
+            let hText = document.createTextNode("dom 객체 생성");
+            //3. 위에서 생성한 hTitle 태그안에 hText 문자 넣기
+            hTitle.append(hText);
+            //4. body에 h1태그 붙이기
+            document.body.append(hTitle);
+        })
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

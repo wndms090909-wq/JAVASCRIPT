@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", function(){
+            //1. img 태그 생성하기
+            let myImg = document.createElement("img");
+            //2. 이미지에 속성추가하기
+            //방법1
+            myImg.src = "./images/magazine-1.jpg";
+            myImg.alt = "매거진1";
+            myImg.width=300;
+            document.body.append(myImg)
+
+            //방법2
+            //appendChild는 옛날 방식
+            //append 최근 추가, jQuery에서도 사용
+            let myImg2 = document.createElement("img");
+            myImg2.setAttribute("src","./images/magazine-2.jpg");
+            myImg2.setAttribute("alt","매거진2");
+            document.body.appendChild(myImg2);
+            myImg2.width=300;
+        })
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
