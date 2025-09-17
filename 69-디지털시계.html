@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 오늘의 날짜 정보를 구할 함수
+        function myDigit() {
+            let today = new Date();
+            console.log(today);
+
+            //시간
+            let hours = today.getHours();
+
+            //분
+            let m = today.getMinutes();
+
+            //초 
+            let s = today.getSeconds();
+            console.log(hours, m, s);
+            let digit = document.querySelector(".myClock");
+            //digit에 시계 붙이기
+            // digit.append(`${hours} : ${m} : ${s}`);
+
+            //innerHTML 내용물을 바꿔라? 추천/기본
+            // digit.innerHTML = `${hours} : ${m} : ${s}`;
+
+            //textContent
+            digit.textContent = `${hours} : ${m} : ${s}`
+        }
+
+        //일정시간 마다 함수 호출하기
+        setInterval(myDigit, 1000);
+        document.addEventListener("DOMContentLoaded", myDigit);
+        
+    </script>
+</head>
+
+<body>
+    <div class="myClock"></div>
+</body>
+
+</html>
