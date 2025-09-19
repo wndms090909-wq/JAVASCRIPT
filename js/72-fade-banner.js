@@ -10,11 +10,11 @@ let current = 0;
 //버튼을 클릭 이벤트 id = 순서
 //btn이 pager>l를 순서대로 받음
 pagerBtns.forEach((btn, id) => {
-    console.log("전체 버튼:", pagerBtns);
+    // console.log("전체 버튼:", pagerBtns);
     btn.addEventListener("click", (e) => {
         // e.currentTarget 이벤트 대상이 누구인지 찾을때
-        console.log("현재 클릭한 버튼:", e.currentTarget);
-        console.log("클릭한 버튼의 순서:", id)
+        // console.log("현재 클릭한 버튼:", e.currentTarget);
+        // console.log("클릭한 버튼의 순서:", id)
         showBanner(id);
         current = id;
     })
@@ -35,8 +35,8 @@ function showBanner(id) {
 //setInterval("실핼명령", 시간);
 //setInterval(함수명, 시간);
 //setInterval(()=>{}, 시간);
-setInterval(() => {
-    current++;
-    if (current >= banners.length) current = 0;
-    showBanner(current);
-}, 3000)
+// setInterval(() => {
+//     current++;
+//     if (current >= banners.length) current = 0;
+//     showBanner(current);
+// }, 3000)
