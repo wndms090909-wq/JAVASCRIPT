@@ -1,0 +1,74 @@
+/* 모든 요소의 여백제거
+안쪽, 테두리로 요소의 크기가 더 커지지 않도록 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* li 스타일 제거 */
+li {
+    list-style: none;
+}
+
+/* a 밑줄제거, 글자색 #292929*/
+a {
+    text-decoration: none;
+    /* color: #292929; */
+    color:inherit;
+}
+
+/* address, i, em 기울기 */
+address,
+i,
+em {
+    font-style: normal;
+}
+
+/* img, video 위아래 정렬 가운데 */
+img,
+video {
+    vertical-align: middle;
+    max-width: 100%;
+}
+
+button{
+    background: none;
+    border: none;
+    /* a처럼 손모양 나오게 하는거 */
+    cursor: pointer;
+}
+/* .blind 리더기로는 읽혀지지만 화면에서 사라지도록 */
+.blind {
+    position: absolute;
+    top: -999999px;
+}
+
+/* html */
+html {
+    font-size: 10px;
+}
+
+/* body */
+body{
+    font-family: "Pretendard", sans-serif;
+    color:#292929;
+}
+/* rem - html에 지정한 폰트가 기준 */
+/* em 부모의 폰트가 기준 */
+/* 본문이나 메인메뉴로 바로 이동하도록 */
+/* skip */
+.skip>a {
+    display: block;
+    width: 100%;
+    line-height: 50px;
+    background: #292929;
+    color: #fff;
+    text-align: center;
+    position: absolute;
+    top: -9999px;
+}
+
+.skip>a:focus {
+    top: 0;
+}

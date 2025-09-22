@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./css/swiper.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        window.onload = function () {
+            var swiper = new Swiper(".main-slider-wrap", {
+                //기본은 슬라이드
+                //fade로 변경
+                effect:"fade",
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
+                pagination:{
+                    el:".swiper-pagination",
+                    // type: "progressbar"
+                    // type: "fraction"
+                    //pager 버튼 클릭이벤트 주기
+                    clickable:true,
+                }
+            });
+        }
+    </script>
+</head>
+
+<body>
+    <div class="main-slider-wrap swiper">
+        <ul class="main-slider-list swiper-wrapper">
+            <li class="swiper-slide"><a href="#">slider1</a></li>
+            <li class="swiper-slide"><a href="#">slider2</a></li>
+            <li class="swiper-slide"><a href="#">slider3</a></li>
+            <li class="swiper-slide"><a href="#">slider4</a></li>
+            <li class="swiper-slide"><a href="#">slider5</a></li>
+
+        </ul>
+        <!-- pager -->
+        <div class="swiper-pagination"></div>
+
+        <!-- 좌우 화살표 -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+
+.main-slider-wrap{
+    height: 600px;
+    
+    
+}
+
+.main-slider-wrap a{
+    color: #fff;
+    font-size: 100px;
+    text-decoration: none;
+}
+
+/* swiper */
+/* pager - 숫자 */
+.swiper-pagination-fraction{
+    color: #fff;
+}
+
+/* pager-dot */
+.swiper-pagination-bullet{
+    background-color: #eee;
+}
+.swiper-pagination-bullet-active{
+    background: rebeccapurple;
+}
+
+/* arrow */
+.swiper-button-next,
+.swiper-button-prev{
+    color: darkseagreen;
+}

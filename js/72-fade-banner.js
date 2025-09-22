@@ -32,11 +32,11 @@ function showBanner(id) {
 }
 
 //3초마다 배너가 그 다음배너로 변경되도록
-//setInterval("실핼명령", 시간);
-//setInterval(함수명, 시간);
-//setInterval(()=>{}, 시간);
-// setInterval(() => {
-//     current++;
-//     if (current >= banners.length) current = 0;
-//     showBanner(current);
-// }, 3000)
+setInterval("실행명령", 시간);
+setInterval(함수명, 시간);
+setInterval(()=>{}, 시간);
+setInterval(() => {
+    current++;
+    if (current >= banners.length) current = 0;
+    showBanner(current);
+}, 3000)

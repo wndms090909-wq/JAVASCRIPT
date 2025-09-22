@@ -1,0 +1,123 @@
+.inner{
+    max-width: 1600px;
+    margin: 0 auto;
+    background: rgba(255,0,0,0.3);
+}
+
+.main-slider-wrap {
+    position: relative;
+    overflow: hidden;
+    margin-top: 100px;
+}
+
+.main-slider {}
+
+.slider-list {
+    display: flex;
+    width: 400%;
+}
+/* .swiepr-button-prev */
+.swiper-button-prev,
+.swiper-button-next{
+    width: auto;
+    color: transparent;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after{
+    display: none;
+}
+
+.arrow-btn {}
+
+.arrow-btn>li>a {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.arrow-btn>.arrow-left>a {
+    left: 20px;
+}
+
+.arrow-btn>.arrow-right>a {
+    right: 20px;
+}
+
+/* .pager-btn {
+    display: flex;
+    position: absolute;
+    left: 20px;
+    bottom: 3rem;
+    gap: 2rem;
+}
+
+.pager-btn>li>a {
+    display: block;
+    width: 2rem;
+    height: 2rem;
+    background: #fff;
+    border-radius: 20px;
+}
+
+.pager-btn>.active>a {
+    width: 60px;
+    background: var(--main-color);
+} */
+
+.swiper-pagination-bullet{
+    width: 16px;
+    height: 16px;
+}
+.swiper-pagination-bullet-active{
+    
+}
+.scroll-wrap {
+    position: absolute;
+    left: 50%;
+    bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    animation: scrollAni 2s infinite alternate;
+    z-index: 100;
+    transform: translateX(-50%);
+}
+
+@keyframes scrollAni {
+    0% {
+        bottom: 40px;
+        opacity: 0.3;
+    }
+
+    100% {
+        bottom: 70px;
+        opacity: 0.8;
+    }
+}
+
+
+.scroll-wrap>.scroll {
+    width: 35px;
+    height: 60px;
+    border: 3px solid #fff;
+    border-radius: 40px;
+}
+
+.scroll-wrap>.scroll>span {
+    display: block;
+    width: 4px;
+    height: 8px;
+    background: #fff;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 10px;
+}
+
+.scroll-wrap>p {
+    color: #fff;
+    font-size: 1.2rem;
+
+}

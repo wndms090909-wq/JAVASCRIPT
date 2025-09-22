@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrap">
+        내용물
+        <span>여기는 innerText 접근 불가</span>
+    </div>
+
+    <script>
+        let wrap = document.querySelector(".wrap");
+        //innerText
+        console.log(wrap.innerText);
+        //innerHTML 태그까지 보여줌
+        console.log(wrap.innerHTML);
+        //TextContent
+        console.log(wrap.textContent);
+    </script>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .over,
+        .enter {
+            background-color: antiquewhite;
+            padding: 30px;
+            margin-bottom: 10px;
+
+            p {
+                background: green;
+                padding: 10px;
+            }
+        }
+    </style>
+    <script>
+        //body의 배경색 변경 함수
+        function bgChange() {
+            let myBody = document.querySelector("body");
+            myBody.style["background"] = "pink"
+        }
+
+        //btn2를 더블클릭하면 배경색 greem
+        //body를 읽어라
+        window.onload = function () {
+            let myBody = document.querySelector("body");
+            let btn2 = document.querySelector(".btn2");
+            let btn3 = document.querySelector(".btn3");
+            let btn4 = document.querySelector(".btn4");
+            let btn5 = document.querySelector(".btn5");
+
+            btn2.ondblclick = function () {
+                myBody.style.background = "green"
+            }
+            btn3.onmousedown = () => {
+                myBody.style.background = "skyblue";
+            }
+            btn4.addEventListener("mouseup", () => {
+                myBody.style.background = "#ccc";
+            })
+
+            //over
+            let over = document.querySelector(".over");
+            let overChild = document.querySelector(".over>p");
+
+            over.addEventListener("mouseover", (e) => {
+                console.log("여기는 over영역 나 부모");
+            })
+            overChild.addEventListener("mouseover", (e) => {
+                //이벤트 부모에 전달됨을 이벤트 버블링이라고 함
+                //버블링을 막아줄때
+                e.stopPropagation();
+                console.log("여기는 over의 영역 나 자식");
+            })
+            //enter
+            let enter = document.querySelector(".enter");
+            let enterChild = document.querySelector(".enter>p");
+
+            enter.addEventListener("mouseenter", () => {
+                console.log("여기는 enter 영역 나 부모");
+            })
+            enterChild.addEventListener("mouseenter", () => {
+                console.log("여기는 enter 영역 나 자식");
+            })
+
+            //body에서 마우스가 움직이면 좌표값 출력하기
+            myBody.addEventListener("mousemove", (e) => {
+                //e event의 약자를 사용한 이벤트와 관련된 모든 정보를 저장한 매개변수
+                // console.log(e);
+                //이번트 종류
+                console.log(e.type);
+                //이벤트 대상
+                console.log(e.tagert, e.currentTarget);
+                //마우스의 위치값
+                console.log(e.clientX, e.clientY);
+                let x = e.clientX;
+                let y = e.clientY;
+                document.querySelector(".xPos").textContent = x;
+                document.querySelector(".yPos").textContent = y;
+
+
+                // document.querySelector(".xPos").innerHTML = x;
+                // document.querySelector(".yPos").innerHTML = y;
+
+            })
+            //마우스 우측버튼
+            myBody.addEventListener("contextmenu",(e)=>{
+                //기본 이벤트 막기 a, form subit, reset, 마우스 우측
+                e.preventDefault();
+                alert("마우스 우측버튼 금지");
+            })
+            
+        }
+
+    </script>
+</head>
+
+<body>
+    <h1>event</h1>
+    <p>웹에서 발생하는 특정 사건을 의미한다</p>
+    <p>이미지 주기</p>
+    <pre>
+        1. 태그에 직접 주기
+        <태그 on이벤트타임="할일"></대그>
+
+        2. 선택자로 주기
+        선택자.이벤드타입 = () 
+
+        3. 리스터 함수로 주기
+        선택자.addEventLister("이벤트타입", 할일);
+    </pre>
+    <h2>mouse event</h2>
+    <p class="btn1"><a href="#" onclick="bgChange();">click</a></p>
+    <p class="btn2"><a href="#">dblclick</a></p>
+    <p class="btn3"><a href="#">mousedown</a></p>
+    <p class="btn4"><a href="#">mouseup</a></p>
+    <p class="btn5"><a href="#">mousemove</a></p>
+    <div class="pos">
+        <span class="xPos"></span>
+        <span class="yPos"></span>
+    </div>
+    <div class="over">
+        <p>over</p>
+    </div>
+    <div class="enter">
+        <p>enter</p>
+    </div>
+</body>
+
+</html>

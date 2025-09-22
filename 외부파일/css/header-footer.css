@@ -1,0 +1,32 @@
+.top {
+    width: 100%;
+    line-height: 50px;
+    background: dodgerblue;
+
+}
+
+.close-btn{
+    color: wheat;
+}
+
+.header{
+    display: flex;
+}
+
+.main-menu{
+    display: flex;
+    gap: 20px;
+}
+
+.footer {
+    background: #ddd;
+}
+
+.popup {
+    position: absolute;
+    background: pink;
+    width: 300px;
+    height: 200px;
+    top: 50%;
+    display: none;
+}
