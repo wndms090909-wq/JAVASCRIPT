@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrap{
+            width: 600px;
+            height: 400px;
+            border: 2px solid black;
+            box-sizing: border-box;
+            position: relative;
+        }
+        .icon{
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+    <!-- <script>
+        document.addEventListener("keydown", (e)=>{
+            console.log(e);
+        })
+    </script> -->
+    <script defer src="./js/81-event-keybord-star.js"></script>
+</head>
+<body>
+    <h1>키보드 이벤트</h1>
+    <p>keydown</p>
+    <p>keyup</p>
+    <p>keypress</p>
+
+    <hr>
+    <input type="text" id="code">
+    <div class="wrap">
+        <div class="icon"><img src="./images/star-ye.png" alt=""></div>
+    </div>
+</body>
+</html>

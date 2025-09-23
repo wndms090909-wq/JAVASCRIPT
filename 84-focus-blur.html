@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input {
+            outline: none;
+            height: 30px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            /* line-height: 30px; */
+        }
+
+        .active {
+            border-color: sandybrown;
+        }
+
+        p {
+            position: relative;
+            font-size: 13px;
+        }
+
+        p>label {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            // let uInput = document.querySelectorAll("input");
+            let uId = document.querySelector("#uId")
+            let uPass = document.querySelector("#uPass")
+
+            //아이디
+            uId.addEventListener("focus", function (e) {
+                uId.classList.add("active")
+                document.querySelector(".idText").style.display ="none"
+            })
+            uId.addEventListener("blur", function(e){
+                uId.classList.remove("active");
+                document.querySelector(".idText").style.display = "block"
+            })
+
+            //비밀번호
+            uPass.addEventListener("focus", function (e){
+                uPass.classList.add("active")
+                document.querySelector(".passText").style.display ="none"
+            })
+            uPass.addEventListener("blur", function (e){
+                uPass.classList.remove("active")
+                document.querySelector(".passText").style.display = "block"
+            })
+        }
+    </script>
+</head>
+
+<body>
+    <form>
+        <p><label for="uId" class="idText">아이디</label><input type="text" id="uId"></p>
+        <p><label for="uPass" class="passText">비밀번호</label><input type="password" id="uPass"></p>
+        <!-- <p><label for="uName" class="nameText">사용자이름</label><input type="text" ></p> -->
+    </form>
+</body>
+
+</html>
