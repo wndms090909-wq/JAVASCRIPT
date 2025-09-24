@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/04-1조-mainslider.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <script>
+        window.onload = function(){
+            const swiper = new Swiper(".main-slider-wrap",{
+                // effect: "fade",
+                loop: true,
+                autoplay: {
+                    delay: 2500
+                },
+                pagination: {
+                    el: ".swiper-pagination"
+                }
+            })
+        }
+    </script>
+</head>
+
+<body>
+    <div class="main-slider-wrap swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="text-box">
+                    <strong>8월 에어로위크</strong>
+                    <p>8-10월 항공권 최대 97% 할인</p>
+                </div>
+                <div class="img-box"><video src="./images/slide-video-01.mp4"></video></div>
+            </div>
+            <div class="swiper-slide">
+                <div class="text-box">
+                    <strong>청주-나트랑 신규 취항 기념</strong>
+                    <p>국제선 특가 41,400원~</p>
+                </div>
+                <div class="img-box"><img src="./images/slide-img-02.png" alt=""></div>
+            </div>
+            <div class="swiper-slide">
+                <div class="text-box">
+                    <strong>9월 특별 운항</strong>
+                    <p>청주-마츠모토</p>
+                </div>
+                <div class="img-box"><img src="./images/slide-img-03.png" alt=""></div>
+            </div>
+            <div class="swiper-slide">
+                <div class="text-box">
+                    <strong>매일 단독 운항 </strong>
+                    <p>청주-오키나와</p>
+                </div>
+                <div class="img-box"><img src="./images/slide-img-04.png" alt=""></div>
+            </div>
+        </div>
+        <div class="swiper-pagination slider-pager"></div>
+    </div>
+</body>
+
+</html>

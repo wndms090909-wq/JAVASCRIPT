@@ -1,0 +1,27 @@
+.main-slider-wrap {
+    height: 100vh;
+}
+
+.main-slider-wrap .text-box {
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    color: #fff;
+    font-size: 3rem;
+}
+
+.main-slider-wrap img {
+   width: 100%;
+   height: inherit;
+   object-fit: cover;
+}
+
+.swiper-pagination-bullet {
+    background: #fff;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.swiper-pagination-bullet-active {
+    width: 30px;
+}
