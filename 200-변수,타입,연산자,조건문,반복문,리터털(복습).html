@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var userName = "홍길동";
+        let userAge = 20;
+        const PI = 3.14;
+        let gender = true;
+        let job;
+        let hobby = "도와주기";
+        hobby = null
+
+        var userName = "김철수";
+        // let userAge = 50;
+        userAge = 50;
+        // PI = 2.333
+        console.log(userName, userAge, PI, job, gender, hobby);
+        console.log(typeof (userName), typeof (userAge), typeof (PI), typeof (job), typeof (hobby));
+
+        //연산자
+        let a = 10;
+        let b = 3;
+
+        //산술연산
+        console.log(a + b); //13
+        console.log(a / b); //3.333
+        console.log(a % b); //1
+
+        //비교연산
+        console.log(a > b); //true
+        console.log(a === b) //false a랑 b 같나
+
+        //연결연산 a = 10
+        console.log("a = " + a);
+        //템플릿 리터럴 방식(백틱)
+        console.log(`a = ${a}`);
+
+        //논리연산
+        let age = 20;
+        let userId = true;
+        //age값이 18보다 크고, userId가 있으면 "입장가능" 하나라도 성립안되면 "입장불가"
+        //삼항조건문
+        // age>18 ? console.log("입장가능") : console.log("입장불가");
+        age > 18 && userId ? console.log("입장가능") : console.log("입장불가");
+        //not
+        console.log(!userId); //false 토글에서 주로 사용
+
+        //대입연산
+        console.log(a += b);
+        console.log(a);
+
+        //조건문
+        let score = 80;
+        let gender1 = 0; //true 1, false 0
+        //score안에 들어있는 값이 80보다 크면 참 잘했어요, 그렇지않으면 노력하세요
+        // score>=80 ? console.log("참잘했어요") : console.log("노력하세요");
+        if (score >= 80) {
+            console.log("참잘했어요")
+        }
+        else {
+            console.log("노력하세요");
+        }
+
+        //gender1이 참이면 남자 거짓이면 여자
+        if (gender1) {
+            console.log("남자")
+        }
+        else {
+            console.log("여자")
+        }
+
+        //반복문 기본
+        //오늘은 수요일 5번 출력하기
+        for (i = 1; i <= 5; i++) {
+            console.log("오늘은 수요일" + i);
+        }
+        //1~10출력
+        for (i = 1; i <= 10; i++) {
+            // if (i == 5){
+            //     break;
+            // }
+            //  console.log(i)
+            // if (i == 5) break;
+            if (i == 5) continue; //5만 안나옴
+            console.log(i);
+        }
+        //break, continue 보조 제어문
+        //for 별 출력하기
+        for (i = 1; i <= 5; i++) {
+            document.write("<br>");
+            for (j = 1; j <= i; j++) {
+                document.write("*")
+            }
+        }
+        //별 5, 4, 3, 2, 1
+        for (i = 5; i >= 1; i--) {
+            document.write("<br>");
+            for (j = 1; j <= i; j++) {
+                document.write("*")
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+    <h1>변수</h1>
+    <p>변할수 있는 데이터를 저장하는 공간</p>
+    <pre>var(vatiable) - 이전버전 : 재선언가능, 재할당
+        let - 다시는 선언할 수 없다 : 재선언불가능, 재할당가능(값바꾸기 가능)
+        const - 다른 프로그램에서 변할수 없는 데이터를 저장하는 공간
+    </pre>
+    <p>
+        var 변수명1 = 데이터;
+        let 변수명2;
+        변수명1 = ""(null);
+    </p>
+    <hr>
+
+    <h1>데이터 타입의 종류</h1>
+    <pre>
+        숫자(Number): 1 4.3
+        문자(String): "", ""
+        Boolean: true, false (1,0) -> 주로 조건문에 사용
+        null: 의도적으로 공간을 비운경우
+        undefined: 변수 선언을 할때 데이터를 할당하지 않는 경우
+        BigInt: 64bit 소수점숫자에 특화
+    </pre>
+    <hr>
+
+    <h1>연산자</h1>
+    <p>데이터를 조작하여 처리하는 방식을 뜻함</p>
+    <pre>
+        산술연산자: +, -, *, /, %
+        연결연산자: + -> 템플릿 리터럴 방식: 백틱 `` 요즘사용
+        증감연산자: ++, --
+        대입연산자: =, +=, -=, *=, /=, %= 오른쪽껄 왼쪽에 넣음 (+= 오른쪽을 왼쪽과 더하여 넣음)
+        비교연산자: >, >=, <, <=, ===, !== => true, false
+        논리연산자: &&, ||(or), !(현재의 반대상태로 만들어줌)
+        삼항조건연산자: 조건문? 조건이 참일때 실행 : 조건이 거짓일때 실행;
+    </pre>
+    <hr>
+
+    <h1>조건문</h1>
+    <p>조건이 맞는지 체크하여 조건이 참일때, 조건이 거짓을때 처리할 명령을 주는것</p>
+    <p>if(if, if~else, if~else if~esle) => 조건이 적을때, 비교연산<br>
+        switch~case => 조건이 많은경우, 값</p>
+    <pre>
+        if(조건문){
+            조건의 결과가 참일때 실행할 문장
+        }
+
+        if(조건문){
+            조건이 참일때 실행할 문장;
+        }
+        else{
+            조건이 거짓일때 실행할 문장;
+        }
+
+        if(조건문1){
+            조건문1일 참일때
+        }
+        else if(조건문2){
+            조건1 거짓, 조건2 참일때 실행
+        }
+        else if(조건문3){
+            조건1 거짓, 조건2 거짓, 조건문3 참
+        }
+        else{
+            모든 조건이 거짓일때 처리할 문장;
+        }
+
+        switch(조건에대한값을 저장한 변수){
+            case "값1":
+                값1일때 처리할 문장;
+            break;
+            case "값2":
+                값2일때 처리할 문장;
+            break;
+            default:
+                위에 값이 없는경우 나머지를 처리할때;
+        }
+    </pre>
+    <hr>
+
+    <div>
+        <h1>반복문</h1>
+        <p>같은 명령어를 여러번 실행해야될 경우</p>
+        <p>for => 정해진 횟수만큼 반복,
+            while => 조건이 맞을때까지 반복,
+            do~while => 조건과 상관없이 무조건 한번은 실행
+        </p>
+        <pre>
+            for(초기값; 조건식; 증감식){
+                반복해서 실행한 문장;
+            }
+        </pre>
+        <hr>
+    </div>
+
+</body>
+
+</html>

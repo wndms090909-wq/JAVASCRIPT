@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/05-carousel-basic.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        window.onload = function(){
+            let swiper = new Swiper(".goods-wrap",{
+                autoplay: {
+                    delay:2000
+                },
+                loop: true,
+                //배너 보고 싶은 개수
+                //해상도 설정하면 이게 젤 작은 해상도 설정
+                slidesPerView:1,
+                spaceBetween:20,
+                navigation:{
+                    nextEl:".swiper-button-next",
+                    prevEl:".swiper-button-prev"
+                },
+                pagination: {
+                    el: ".swiper-pagination"
+                },
+                breakpoints:{
+                    480:{
+                        slidesPerView:2,
+                        spaceBetween:20
+                    },
+                    768:{
+                        slidesPerView:3,
+                        spaceBetween:30
+                    },
+                    1024:{
+                        slidesPerView:4,
+                        spaceBetween:30
+                    }
+                }
+            })
+        }
+    </script>
+</head>
+<body>
+    <div class="goods-wrap swiper">
+        <ul class="swiper-wrapper goods-list">
+            <li class="swiper-slide">
+                <a href="#">
+                    <div class="text-box">slider1</div>
+                    <div class="img-box"><img src="./images/item-1.png" alt=""></div>
+                </a>
+            </li>
+            <li class="swiper-slide">
+                <a href="#">
+                    <div class="text-box">slider2</div>
+                    <div class="img-box"><img src="./images/item-2.png" alt=""></div>
+                </a>
+            </li>
+            <li class="swiper-slide">
+                <a href="#">
+                    <div class="text-box">slider3</div>
+                    <div class="img-box"><img src="./images/item-3.png" alt=""></div>
+                </a>
+            </li>
+            <li class="swiper-slide">
+                <a href="#">
+                    <div class="text-box">slide4</div>
+                    <div class="img-box"><img src="./images/item-4.png" alt=""></div>
+                </a>
+            </li>
+            <li class="swiper-slide">
+                <a href="#">
+                    <div class="text-box">sldier5</div>
+                    <div class="img-box"><img src="./images/item-5.png" alt=""></div>
+                </a>
+            </li>
+            <li class="swiper-slide">
+                <a href="#">
+                    <div class="text-box">slider6</div>
+                    <div class="img-box"><img src="./images/item-6.png" alt=""></div>
+                </a>
+            </li>
+        </ul>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+</body>
+</html>

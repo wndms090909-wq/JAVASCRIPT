@@ -32,29 +32,42 @@
     </style>
     <script>
         window.onload = function () {
-            // let uInput = document.querySelectorAll("input");
-            let uId = document.querySelector("#uId")
-            let uPass = document.querySelector("#uPass")
+            let uInput = document.querySelectorAll("input");
 
-            //아이디
-            uId.addEventListener("focus", function (e) {
-                uId.classList.add("active")
-                document.querySelector(".idText").style.display ="none"
-            })
-            uId.addEventListener("blur", function(e){
-                uId.classList.remove("active");
-                document.querySelector(".idText").style.display = "block"
-            })
+            uInput.forEach((iinput) => {
+                iinput.addEventListener("focus", function (e) {
+                    this.classList.add("active");
+                    this.previousElementSibling.style.display = "none";
+                })
+                iinput.addEventListener("blur", function (e) {
+                    this.classList.remove("active");
+                    this.previousElementSibling.style.display = "block";
+                })
 
-            //비밀번호
-            uPass.addEventListener("focus", function (e){
-                uPass.classList.add("active")
-                document.querySelector(".passText").style.display ="none"
             })
-            uPass.addEventListener("blur", function (e){
-                uPass.classList.remove("active")
-                document.querySelector(".passText").style.display = "block"
-            })
+            
+            // let uId = document.querySelector("#uId")
+            // let uPass = document.querySelector("#uPass")
+
+            // //아이디
+            // uId.addEventListener("focus", function (e) {
+            //     uId.classList.add("active")
+            //     document.querySelector(".idText").style.display ="none"
+            // })
+            // uId.addEventListener("blur", function(e){
+            //     uId.classList.remove("active");
+            //     document.querySelector(".idText").style.display = "block"
+            // })
+
+            // //비밀번호
+            // uPass.addEventListener("focus", function (e){
+            //     uPass.classList.add("active")
+            //     document.querySelector(".passText").style.display ="none"
+            // })
+            // uPass.addEventListener("blur", function (e){
+            //     uPass.classList.remove("active")
+            //     document.querySelector(".passText").style.display = "block"
+            // })
         }
     </script>
 </head>

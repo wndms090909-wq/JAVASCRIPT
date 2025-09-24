@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/07-carousel-center-active.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        window.onload = function (){
+            var swiper = new Swiper(".swiper",{
+                loop: true,
+                autoplay:{
+                    delay:3000
+                },
+                speed:1000,
+                slidesPerView:2.4,
+                spaceBetween:100,
+                centeredSlides: true,
+                navigation:{
+                    nextEl:".swiper-button-next",
+                    prevEl:".swiper-button-prev"
+                }
+            })
+        }
+    </script>
+</head>
+<body>
+    <div class="goods-wrap swiper">
+        <ul class="swiper-wrapper goods-list">
+            <li class="swiper-slide">
+                <a href="#">
+                    <div class="text-box">slider1</div>
+                    <div class="img-box"><img src="./images/item-1.png" alt=""></div>
+                </a>
+            </li>
+            <li class="swiper-slide">
+                <a href="#">
+                    <div class="text-box">slider2</div>
+                    <div class="img-box"><img src="./images/item-2.png" alt=""></div>
+                </a>
+            </li>
+            <li class="swiper-slide">
+                <a href="#">
+                    <div class="text-box">slider3</div>
+                    <div class="img-box"><img src="./images/item-3.png" alt=""></div>
+                </a>
+            </li>
+            <li class="swiper-slide">
+                <a href="#">
+                    <div class="text-box">slide4</div>
+                    <div class="img-box"><img src="./images/item-4.png" alt=""></div>
+                </a>
+            </li>
+            <li class="swiper-slide">
+                <a href="#">
+                    <div class="text-box">sldier5</div>
+                    <div class="img-box"><img src="./images/item-5.png" alt=""></div>
+                </a>
+            </li>
+            <li class="swiper-slide">
+                <a href="#">
+                    <div class="text-box">slider6</div>
+                    <div class="img-box"><img src="./images/item-6.png" alt=""></div>
+                </a>
+            </li>
+        </ul>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+</body>
+</html>
