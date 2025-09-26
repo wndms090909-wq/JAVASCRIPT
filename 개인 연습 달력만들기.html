@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+    <script>
+        // 날짜값 받는 변수 만들기
+        let today = new Date;
+        console.log(today);
+
+        // 년도 값
+        let year = today.getFullYear();
+        console.log(year);
+
+        // 월 (순서 값으로 산출)
+        let month = today.getMonth();
+        console.log(month);
+
+        // 일
+        let theDay = today.getDate();
+        console.log(theDay);
+
+        // 월 별 1일의 요일 산출하는 변수 만들기
+        let day1th = new Date(year, month, 1);
+
+        let thisWeek = day1th.getDay();
+        console.log(thisWeek);
+
+        // 월 별 마지막 날 변수 만들기
+        let lastDate = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+        // 달력의 줄 수 구하기
+        let row = Math.ceil((thisWeek + lastDate[month]) / 7);
+        console.log(row);
+
+        // 달력에 출력할 숫자
+        let num = 1;
+
+        // 달력을 저장할 변수
+        let cal = "<table>";
+        cal += "<tr>";
+        cal += "<th>일</th><th>월</th><th>화</th><th>수</th><th>목</th><th>금</th><th>토</th>";
+        cal += "</tr>";
+        for (let i = 0; i < row; i++) {
+            cal += "<tr>";
+            for (let j = 0; j < 7; j++) {
+                if (i == 0 && thisWeek > j || num > lastDate[month]) {
+                    cal += "<td></td>"
+                }
+                else {
+                    cal += `<td>${num++}</td>`;
+                }
+            }
+            cal += "</tr>"
+        }
+        cal += "</table>"
+
+        document.write(cal);
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

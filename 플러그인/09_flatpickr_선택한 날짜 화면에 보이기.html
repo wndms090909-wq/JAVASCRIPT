@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script>
+        window.onload = function () {
+            let showDate = document.querySelector(".selectDate span")
+            flatpickr("#myDate", {
+                minDate: "today",
+                maxDate: "2025-10-25",
+                onChange: function (selectDates, dateStr, instance){
+                    // showDate.innerHTML=selectDates;
+                    // selectDates 요일, 월, 일, 년
+                    showDate.innerHTML=dateStr;
+                    //dateStr yyyy-mm-dd
+                    console.log(instance);
+                }
+            })
+        }
+    </script>
+</head>
+
+<body>
+    <input type="text" id="myDate">
+    <div class="selectDate">선택한 날짜 : <span></span></div>
+</body>
+
+</html>

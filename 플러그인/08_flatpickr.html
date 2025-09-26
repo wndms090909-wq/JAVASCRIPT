@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script>
+        window.onload = function () {
+            flatpickr("#myDate", {
+                // 시작 날짜
+                minDate: "today",
+                // 끝 날짜
+                // maxDate: "2025-10-25"
+                maxDate: new Date().fp_incr(7) //오늘 날짜로 부터 7일 간
+            })
+            flatpickr(".calender", {
+                inline: true
+            })
+        }
+    </script>
+</head>
+
+<body>
+    <input type="text" id="myDate">
+
+    <h1>calender</h1>
+    <div class="calender"></div>
+</body>
+
+</html>

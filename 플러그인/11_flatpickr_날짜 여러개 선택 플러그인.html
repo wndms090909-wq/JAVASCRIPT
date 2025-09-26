@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/themes/dark.css">
+    <style>
+        .flatpickr-day.selected {
+            background: cornflowerblue;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/plugins/rangePlugin.js"></script>
+
+
+    <script>
+        window.onload = function () {
+            let showDate = document.querySelector(".startEndDate")
+            flatpickr(".startDate", {
+                "plugins": [new rangePlugin({ input: ".endDate" })],
+                minDate: "today",
+                maxDate: "2025-12-31",
+                onChange: function (selectDates, dateStr, instance) {
+                    if (selectDates.length === 1) {
+                        let start = instance.formatDate(selectDates[0], "Y-m-d")
+                        showDate.innerHTML = `출발일 : ${start}`
+                    } else if (selectDates.length === 2) {
+                        let start = instance.formatDate(selectDates[0], "Y-m-d")
+                        let end = instance.formatDate(selectDates[1], "Y-m-d")
+                        showDate.innerHTML = `출발일 : ${start} <br> 도착일 : ${end}`
+                    } else {
+                        // 출발일, 도착일 모두 선택 X.
+                    }
+                }
+            })
+        }
+    </script>
+</head>
+
+<body>
+    <div>
+        <strong>출발 날짜</strong>
+        <input type="text" class="startDate">
+    </div>
+    <div>
+        <strong>도착 날짜</strong>
+        <input type="text" class="endDate">
+    </div>
+    <div class="startEndDate"></div>
+
+
+</body>
+
+</html>

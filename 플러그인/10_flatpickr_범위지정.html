@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script>
+        window.onload = function () {
+            let showDate = document.querySelector(".startEndDate")
+            flatpickr(".myDate", {
+                // 날짜 범위, 다중 선택
+                mode: "range",
+                maxDate: "2025-12-31",
+                onChange: function (selectDates, dateStr, instance) {
+                    // console.log(selectDates)
+                    console.log(selectDates.length)
+                    console.log(dateStr)
+                    console.log(instance)
+                    // selectedDates라는 배열의 길이가 1이면 출발날짜,
+                    // 2개이면 출발날짜와 도착날짜를 모두 보여주도록.
+                    if (selectDates.length === 1) {
+                        // 출발일만 선택
+                        // 출발일을 저장할 변수
+                        let start = instance.formatDate(selectDates[0], "Y-m-d")
+                        showDate.innerHTML = `출발일 : ${start}`
+
+                    } else if (selectDates.length === 2) {
+                        // 출발일, 도착일 모두 선택
+                        let start = instance.formatDate(selectDates[0], "Y-m-d")
+                        let end = instance.formatDate(selectDates[1], "Y-m-d")
+                        showDate.innerHTML=`출발일 : ${start} <br> 도착일 : ${end}`
+                    } else {
+                        // 출발일, 도착일 모두 선택 X.
+                    }
+                }
+            })
+        }
+    </script>
+</head>
+
+<body>
+    <input type="text" class="myDate">
+    <div class="startEndDate"></div>
+</body>
+
+</html>

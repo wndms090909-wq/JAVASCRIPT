@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 숫자를 저장할 배열만들기
+        let numbers = [1, 2, 3];
+        // 데이터를 *2로 만들기
+        let dobleNum = numbers.map(num => num * 2);
+        document.write(numbers + "<br>" + dobleNum);
+        document.write("<hr>")
+
+        // 문자를 저장할 배열
+        let fruits = ["apple", "banana", "cherry"];
+        // document.write(fruits + "<br>");
+        // 전부 다 대문자로 변경하기
+        let fruitsUpper = fruits.map(f => f.toUpperCase());
+        document.write(fruits + "<br>");
+        document.write(fruitsUpper + "<br>");
+
+        // 0:apple 1:banana 2. cherry
+        let result = fruits.map((f, index) => `${index}:${f}`);
+        document.write(result + "<br>");
+
+        // 객체 배열 (object 배열)
+        let users = [
+            { name: "kim", age: 40 },
+            { name: "lee", age: 10 },
+            { name: "hong", age: 20 }
+        ]
+
+        // 객체 배열의 내용 중 이름만 추출하여 배열 만들기
+        let names = users.map(user => user.name);
+        document.write(names + "<br>");
+
+        // kim은 나이가 40살입니다, lee는 나이가 10살입니다, hong은 나이가 20살입니다.
+        let info = users.map(u => `${u.name}은 나이가 ${u.age}살입니다`);
+        document.write(info + "<br>")
+    </script>
+</head>
+
+<body>
+    <h1>map</h1>
+    <p>배열의 데이터를 조작하여 새로운 배열을 만들 때 사용.</p>
+
+</body>
+
+</html>

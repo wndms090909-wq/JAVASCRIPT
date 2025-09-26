@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //배열 - 색상
+        let colors = ["red", "green", "blue"];
+        //first = red, second = green, third = blue
+        // let first = colors[0];
+        // let second = colors[1];
+        // let third = colors[2];
+        // document.write(first, second, third + "<br>")
+        let [first, second, third] = colors;
+        document.write(first, second, third + "<br>");
+
+        //첫번째 값을 저장할 변수, 중간 데이터는 건너뛰고, 마지막 데이터를 저장할 변수
+        let store = ["과일", "음료수", "빵", "라면", "햄"];
+        let [fruit2, drink, , , ham] = store;
+        document.write(fruit2, drink, ham + "<br>");
+
+        let [fruit3, drink2, ...rest] = store;
+        document.write(fruit3, drink2, rest + "<br>");
+
+        let number = [10,5];
+        let [x = 100, y = 200, z = 300] = number;
+        document.write(x, y, z + "<br>");
+
+        //객체
+        let user = {
+            name: "홍길동",
+            age: 20,
+            city: "seoul",
+            hobby:"영화보기"
+        }
+
+        let { name, age, city, job = "의적" } = user;
+        document.write(name, age, city, job + "<br>");
+
+        function hi({name, age, city}) {
+            document.write(`오늘은 금요일, 나는${name} 나이는 ${age}살 이고 ${city}에 살아요`)
+        }
+        hi(user)
+
+        // function hi (name, age, city){
+        //     document.write(`오늘은 금요일, 나${name}나이가 ${age}이고 ${city}에 살아요`)
+        // }
+        // hi(user.name, user.age, user.city)
+    </script>
+</head>
+
+<body>
+    <h1>구조분해할당</h1>
+    <p>배열이나 객체의 구조를 분해해서 새로운 변수에 다시 넣기</p>
+    <p></p>
+</body>
+
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //1. 배열복사
+        let arr1 = [1, 2, 3];
+        let arr1Copy = [...arr1];
+        document.write(arr1Copy + "<br>");
+
+        //2. 배열합치기
+        let arr2 = [10, 20, 30];
+        let arr2Merge = [...arr1, ...arr2];
+        document.write(arr2Merge + "<br>")
+
+        //3. 배열에 요소추가
+        let arrAdd = [0, ...arr1, 4];
+        document.write(arrAdd + "<br>");
+
+        //4. 함수의 매개값
+        function add(x, y, z) {
+            return x + y + z;
+        }
+        let result = add(...arr1);
+        document.write(result + "<br>");
+
+        //5. 객체 복사
+        let obj1 = { a: 1, b: 2 };
+        let obj1Copy = { ...obj1 };
+        //객체는 문서에 안찍힘
+        console.log(obj1Copy);
+
+        //6. 객체 합치기
+        let user = { name: "홍길동" };
+        let info = { age: 20, job: "의적" };
+        let userMerge = { ...user, ...info };
+        console.log(userMerge);
+
+        //7. 객체 덮어쓰기
+        let settings = { theme: "light", lang: "en" };
+        let newSettings = { ...settings, lang: "ko" };
+        console.log(newSettings);
+
+        //sum 함수만들기
+        //...변수 = 나머지 전부 받는다
+        function sum(x, ...y) {
+            return x * y.length
+        }
+        let hap = sum(2, 1, 2, 3, 4);
+        document.write(hap + "<br>");
+
+        //배열복사 이전버전
+        //배열은 순서를 가지는 데이터들의 집합체
+        let number = [11, 22, 33];
+        //[0, 11,22,33];
+        let newNumber = [0, number[0], number[1], number[2]];
+        document.write(newNumber + "<br>");
+
+        //es6 spread연산자나옴
+        //[1,11,22,33,999]
+        let newNumber2 = [1, ...number, 999];
+        document.write(newNumber2+"<br>");
+
+        //객체(object)
+        //키(속성, 메서드)와 값, 명령어를 가진다
+        //객체 접근하기 키로 접근한다
+        let people1 = {
+            name:"홍길동",
+            age:20,
+            hobby:"도적"
+        }
+        let pInfo = {
+            name: people1.name,
+            age:people1.age,
+            hobby:people1.hobby,
+            job:"의사",
+            
+        }
+        console.log(pInfo)
+
+        //es6버전 객체
+        let pInfo2 =  {
+            ...people1,
+            job:"변호사"
+        }
+        console.log(pInfo2);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
