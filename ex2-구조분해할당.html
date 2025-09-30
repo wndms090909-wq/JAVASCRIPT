@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // let user = {
+        //     name: "홍길동",
+        //     age: 21,
+        //     city: "seoul",
+        //     hobby: "영화보기"
+        // }
+        // let userName = user.name;
+        // let userAge = user.age;
+        // let userCity = user.city;
+        // let userJob = user.job || "의적";
+        // document.write(userName, userAge, userCity, userJob+"<br>");
+
+        // let { name, age, city, job = "의적" } = user;
+        // document.write("이름:",name+"<br>", age, city, job);
+
+        // function hi ({name, age, city}){
+        //     return 
+        // }
+        // hi()
+
+        //함수 반환값에서 바로 구조분해
+        function getUser() {
+            return {name:"이순신", age: 30, city:"yeosu"};
+        }
+        let {name:n, city:c} = getUser();
+        document.write(n,c)
+    </script> 
+</head>
+
+<body>
+
+</body>
+
+</html>

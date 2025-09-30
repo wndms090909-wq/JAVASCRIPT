@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .css5 {
+            font-size: 30px;
+            background: peachpuff
+        }
+
+        .remove {
+            text-decoration: underline;
+            background-color: thistle;
+        }
+
+        .bg {
+            background: palegoldenrod;
+            color: brown;
+        }
+        .box{
+            width: 400px;
+            height: 300px;
+            padding: 40px;
+            border: 5px solid black;
+            background: dodgerblue;
+            box-sizing: border-box;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            let app = document.querySelector(".app");
+            app.append("추가됨")
+            let innerApp = document.querySelector(".innerApp");
+            innerApp.innerHTML = "<h2>html로 변경하기</h2>";
+            // innerApp.innerText = "text로 변경하기";
+            // innerApp.textContent = "textContent";
+
+            let css1 = document.querySelector(".css1");
+            let css2 = document.querySelector(".css2");
+            let css3 = document.querySelector(".css3");
+            let css4 = document.querySelector(".css4");
+            let css5 = document.querySelector(".css5");
+
+            css1.style.backgroundColor = "pink";
+            css2.style["font-size"] = "30px";
+            css3.style.setProperty("color", "darkblue");
+            css4.style.cssText = "background-color:green";
+            //css5에서 적용된 style값을 저장할 변수
+            // let css5Color = css5.style.getPropertyValue("background");
+            // console.log(css5Color);
+
+            let css4Color = css4.style.getPropertyValue("background-color");
+            console.log(css4Color);
+
+            let css5Color = window.getComputedStyle(css5)
+            console.log(css5Color.background);
+
+            //태그의 속성값을 가져오기, 변경하기
+            let myImg = document.querySelector(".myImg img");
+            let srcImg = myImg.getAttribute("src");
+            console.log(srcImg);
+            myImg.setAttribute("src", "./images/star-ye.png");
+
+            //classList
+            let addClass = document.querySelector(".add");
+            let removeClass = document.querySelector(".remove");
+            let toggleClass = document.querySelector(".toggle");
+            let hasClass = document.querySelector(".has");
+
+            //addClass에 bg 클래스 추가
+            addClass.classList.add("bg");
+            removeClass.classList.remove("remove");
+            console.log(hasClass.classList.contains("bg"));
+            toggleClass.addEventListener("click", () => {
+                toggleClass.classList.toggle("bg");
+            })
+            
+            //.list 첫번째 li를 복사하여 .list마지막에 붙이기
+            let list = document.querySelector(".list");
+            //첫번째자식
+            let first = list.firstElementChild.cloneNode(true);
+            //마지막자식
+            let last = list.lastElementChild.cloneNode(true);
+            //list 마지막에 추가
+            list.appendChild(first);
+            //list 앞에 붙이기
+            list.prepend(last);
+            //list의 자식의 개수
+            console.log(list.children.length);
+            console.log(list.childElementCount);
+
+            //
+            let box = document.querySelector(".box");
+            //box width400 padding40 border5
+            console.log(box.offsetWidth);//490
+            //box client width 400 padding40
+            console.log(box.clientWidth); //480
+            
+            //window 너비
+            console.log(window.innerWidth);
+            console.log(window.outerWidth);
+
+
+        }
+    </script>
+</head>
+
+<body>
+    <h1>dom</h1>
+    <h2>텍스트 변경, 자식 추가</h2>
+    <p class="app">append, appendChild - 추가</p>
+    <p>innerHTML, innerText, textContent - 내용변경</p>
+    <p class="innerApp">이곳이 변경됩니다</p>
+    <hr>
+
+    <h2>style 추가, 가져오기</h2>
+    <p class="css1">style.속성 -</p>
+    <p class="css2">style["속성"]</p>
+    <p class="css3">style.setProperty("속성", "값")</p>
+    <p class="css4">style.cssText = "속성:값, 속성:값"</p>
+    <p class="css5">style 가져오기</p>
+    <hr>
+
+    <h2>속성 변경, 가져오기</h2>
+    <p class="myImg"><img src="./images/05_main_sell_pc1.png" alt="어린이책상"></p>
+    <p>setAttribute - 속성 가져오기</p>
+    <p>.속성 = "값" / getAttruibute - 속성 변경하기</p>
+    <hr>
+
+    <h2>class 추가, 삭제, 토글</h2>
+    <p class="add">classList.add - 클래스 추가</p>
+    <p class="remove">classList.remove - 클래스 제거</p>
+    <p class="toggle">classList.toggle - 클래스 추가/제거</p>
+    <p class="has">classList.contains - 클래스가 있는지 체크</p>
+
+    <h2>복사하여 추가하기</h2>
+    <p>cloneNode - 요소를 복사할때 사용한다</p>
+    <p>자식의 개수 - </p>
+    <ul class="list">
+        <li><a href="#">list1</a></li>
+        <li><a href="#">list2</a></li>
+    </ul>
+    
+    <h2>요소의 너비, 높이</h2>
+    <p>offsetWidth</p>
+    <p>clientWidth</p>
+    <p>window.innerWidth</p>
+    <p>window.outerWidth</p>
+    <p></p>
+    <div class="box">box</div>
+</body>
+
+</html>

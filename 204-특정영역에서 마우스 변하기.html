@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .notice-wrap {
+            max-width: 1700px;
+            height: 700px;
+            margin: 0 auto;
+            background: #ccc;
+            position: relative;
+        }
+
+
+        .notice-btn>a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* flex-direction: column; */
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 150px;
+            height: 150px;
+            background: #0261ef;
+            color: #fff;
+            border-radius: 50%;
+            opacity: 0;
+        }
+
+        .notice-btn>a.on {
+            opacity: 1;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            //보여질 영역을 저장할 변수
+            let noticeWrap = document.querySelector(".notice-wrap");
+            //마우스 모양
+            let noticeBtn = document.querySelector(".notice-btn>a");
+            //마우스의 위치를 체크할 변수
+            let x = 0, y = 0, cx = 0, cy = 0;
+            //noticeWrap 영역인지를 체크할 변수 true면 영역안/false면 영역밖
+            let active = false;
+
+            //noticeWrap 영역에서 마우스가 올라가면
+            noticeWrap.addEventListener("mouseenter", () => {
+                active = true;
+                noticeBtn.classList.add("on");
+                //기본 마우스 모양 숨기기
+                noticeWrap.style.cursor = "none";
+            })
+            //noticeWrap 영역에서 마우스가 벗어나면
+            noticeWrap.addEventListener("mouseleave", () => {
+                active = false;
+                noticeBtn.classList.remove("on");
+            })
+            //noticeWrap 영역에서 마우스가 움직이면
+            noticeWrap.addEventListener("mousemove", (e) => {
+                console.log(e.clientX, e.clientY);
+                x = e.clientX;
+                y = e.clientY;
+            })
+
+            //requestAnimationFrame(자기자신)
+            function animate(){
+                //현재위치에서 목표한 위치로 이동
+                cx += (x - cx) * 0.5;
+                cy += (y - cy) * 0.5;
+                noticeBtn.style.left=cx + "px";
+                noticeBtn.style.top=cy + "px";
+                requestAnimationFrame(animate);
+            }
+
+            animate();
+        }
+    </script>
+</head>
+
+<body>
+    <header>header</header>
+    <main>
+        <section class="notice-wrap">
+            <div class="notice-btn"><a href="#">View more</a></div>
+        </section>
+    </main>
+    <footer>footer</footer>
+</body>
+
+</html>
