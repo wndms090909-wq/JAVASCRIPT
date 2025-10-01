@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .goods-page-wrap>.inner {
+            display: flex;
+            background-color: lavenderblush;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .goods-page-wrap>.inner>div {
+            flex: 1;
+        }
+
+        .goods-list {
+            border: 1px solid #ccc;
+            line-height: 2;
+            padding: 20px;
+        }
+
+        .goods-list>.item {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .total-wrap {
+            position: absolute;
+            background: #fff;
+            width: 100%;
+            top: 100%;
+            display: flex;
+            justify-content: space-between;
+            border: 1px solid #ccc;
+
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            //왼쪽
+
+            //오른쪽
+            //합계를 보여줄 total
+            //시작하면 바로 보여줄 제품명
+            const selectBasic = document.querySelector(".basic h2");
+
+            //보여줄 영역
+            const showBasic = document.querySelector(".selected-basic");
+            showBasic.innerHTML = selectBasic.textContent;
+        }
+    </script>
+</head>
+
+<body>
+    <section class="goods-page-wrap">
+        <div class="inner">
+            <div class="basic-goods-wrap">
+                <div class="basic">
+                    <h2>뿌링클</h2>
+                    <div class="basic-item-button">
+                        <button class="minus">-</button><span>0</span><button class="plus">+</button>
+                    </div>
+                </div>
+            </div>
+            <div class="add-goods-wrap">
+                <div>
+                    <h2>반마리 치킨</h2>
+                    <div class="goods-list chicken">
+                        <div class="item">
+                            <div class="item-name">
+                                <span>후라이드</span>
+                                <strong>15000</strong>
+                            </div>
+                            <div class="button-wrap">
+                                <button class="minus">-</button><span>0</span><button class="plus">+</button>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="item-name">
+                                <span>양념치킨</span>
+                                <strong>35000</strong>
+                            </div>
+                            <div class="button-wrap">
+                                <button class="minus">-</button><span>0</span><button class="plus">+</button>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="item-name">
+                                <span>간장치킨</span>
+                                <strong>25000</strong>
+                            </div>
+                            <div class="button-wrap">
+                                <button class="minus">-</button><span>0</span><button class="plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h2>사이드 추가</h2>
+                    <div class="goods-list side">
+                        <div class="item">
+                            <div class="item-name">
+                                <span>치킨무</span>
+                                <strong>1000</strong>
+                            </div>
+                            <div class="button-wrap">
+                                <button class="minus">-</button><span>0</span><button class="plus">+</button>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="item-name">
+                                <span>뿌링클나쵸</span>
+                                <strong>5000</strong>
+                            </div>
+                            <div class="button-wrap">
+                                <button class="minus">-</button><span>0</span><button class="plus">+</button>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="item-name">
+                                <span>맛초킹라이스</span>
+                                <strong>2000</strong>
+                            </div>
+                            <div class="button-wrap">
+                                <button class="minus">-</button><span>0</span><button class="plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h2>음료 &amp; 소스</h2>
+                    <div class="goods-list drink">
+                        <div class="item">
+                            <div class="item-name">
+                                <span>양념소스</span>
+                                <strong>500</strong>
+                            </div>
+                            <div class="button-wrap">
+                                <button class="minus">-</button><span>0</span><button class="plus">+</button>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="item-name">
+                                <span>콜라 1.25L</span>
+                                <strong>3000</strong>
+                            </div>
+                            <div class="button-wrap">
+                                <button class="minus">-</button><span>0</span><button class="plus">+</button>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="item-name">
+                                <span>사이다 1.25L</span>
+                                <strong>2500</strong>
+                            </div>
+                            <div class="button-wrap">
+                                <button class="minus">-</button><span>0</span><button class="plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="total-wrap">
+                <div class="selected-basic"></div>
+                <div class="goods-count-wrap">
+                    <span>반마리</span>
+                    <strong class="goods-selected"></strong>
+                </div>
+                <div class="side-count-wrap">
+                    <span>사이드</span>
+                    <strong class="goods-selected"></strong>
+                </div>
+                <div class="drink-count-wrap">
+                    <span>음료&소스</span>
+                    <strong class="goods-selected"></strong>
+                </div>
+                <div class="total">
+                    <p>총 <span>0</span>원</p>
+                    <p>결제하기</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

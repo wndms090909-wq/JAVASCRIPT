@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/common.css">
+    <style>
+        .person-wrap {
+            border: 2px solid salmon;
+            padding: 20px;
+        }
+
+        .person-list{
+            display: flex;
+            gap: 20px;
+
+        }
+        .person-list>li{
+            border: 1px solid #ccc;
+            padding: 30px;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            //객체 배열
+            const user = [
+                {name: "kim", age:40, 성별:"남자"},
+                {name:"lee", age:10, 성별:"여자"},
+                {name:"park", age:20, 성별:"남자"},
+                {name:"choi", age:30, 성별:"여자"},
+                {name:"jung", age:50, 성별:"남자"},
+                {name:"흰둥이", age:5, 성별:"남자"},
+            ]
+
+            //남자만 필터링
+            let man = user.filter(m => m.성별=="남자");
+            console.log(man);
+
+            //ul태그 생성
+            let person = document.createElement("ul");
+            //생성된 태그에 클래스 이름주기
+            // person.classLists.add("person-list");
+            // person.className="person-list";
+            person.setAttribute("class","person-list");
+
+            //li태그 생성
+            man.forEach(m =>{
+                let li = document.createElement("li");
+                //li태그 안에 내용 넣기
+                li.innerHTML = ` <h3>${m.name}님</h3> <p>${m.age}세</p> <p>${m.성별}</p>`
+                //생성한 li를 ul 안에 붙이기
+                person.append(li);
+            })
+            //person-wrap에 ul 붙이기
+            let personWrap = document.querySelector(".person-wrap");
+            personWrap.append(person);
+        }
+    </script>
+</head>
+<body>
+    <h1>filter</h1>
+    <p>배열에 있는 객체 요소를 조건에 맞는것만 추출하여 새로운 배열 만들기</p>
+    <div class="person-wrap"></div>
+</body>
+</html>

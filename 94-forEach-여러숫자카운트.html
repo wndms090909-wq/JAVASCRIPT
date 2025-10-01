@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .goods-list>div {
+            display: flex;
+            gap: 10px;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            //변수 선언
+            let minusBtn = document.querySelectorAll(".goods-list .minus");
+            let plusBtn = document.querySelectorAll(".goods-list .plus");
+            let total = document.querySelector(".total span");
+
+            //합계를 구해줄 함수 만들기
+            function updateTotal() {
+                //합계를 구해줄 변수
+                let totalSum = 0;
+                //
+                let items = document.querySelectorAll(".goods-list>div");
+                console.log(items);
+                items.forEach(item => {
+                    let price = parseInt(item.querySelector(".items-name strong").innerText);
+                    console.log(price);
+                    let count = parseInt(item.querySelector(".button-wrap span").innerText);
+                    console.log(count);
+
+                    totalSum += price*count;
+                    console.log(totalSum)
+                })
+                //toLocaleString() - 1000마다 , 찍히게함
+                total.innerHTML = totalSum.toLocaleString();
+
+            }
+            
+            //plusBtn을 클릭하면 앞에오는 span의 숫자가 1씩 증가
+            //plusBtn[0].addEventListener("click",()=>{})
+            //plusBtn[1].addEventListener("click",()=>{})
+            plusBtn.forEach(btn => {
+                btn.addEventListener("click", () => {
+                    //선택한 버튼에 앞에 오는 span을 선택하여 숫자를 1씩 증가시켜서 내용으로 보여주기
+                    let spanCount = btn.previousElementSibling;
+                    let count = parseInt(spanCount.innerHTML);
+                    count++;
+                    spanCount.innerHTML = count;
+                    updateTotal();
+                })
+            })
+
+            //minusBtn
+            minusBtn.forEach(btn => {
+                btn.addEventListener("click", () => {
+                    let spanCount = btn.nextElementSibling;
+                    let count = parseInt(spanCount.innerHTML);
+                    if (count > 0) {
+                        count--;
+                        spanCount.innerHTML = count;
+                        updateTotal();
+                    }
+                })
+            })
+
+
+        }
+    </script>
+</head>
+
+<body>
+    <div class="goods-wrap">
+        <div class="goods-list">
+            <div class="count1">
+                <div class="items-name"><strong>1000</strong></div>
+                <div class="button-wrap"><button class="minus">-</button><span>0</span><button class="plus">+</button>
+                </div>
+            </div>
+            <div class="count2">
+                <div class="items-name"><strong>2000</strong></div>
+                <div class="button-wrap"><button class="minus">-</button><span>0</span><button class="plus">+</button>
+                </div>
+            </div>
+            <div class="count3">
+                <div class="items-name"><strong>3000</strong></div>
+                <div class="button-wrap"><button class="minus">-</button><span>0</span><button class="plus">+</button>
+                </div>
+            </div>
+        </div>
+        <div class="total">총합계: <span>0</span>원</div>
+    </div>
+</body>
+
+</html>

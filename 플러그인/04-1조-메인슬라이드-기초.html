@@ -10,8 +10,9 @@
     <link rel="stylesheet" href="./css/04-1조-mainslider.css">
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
     <script>
-        window.onload = function(){
-            const swiper = new Swiper(".main-slider-wrap",{
+        window.onload = function () {
+            let video = document.querySelector("#main-video")
+            const swiper = new Swiper(".main-slider-wrap", {
                 // effect: "fade",
                 loop: true,
                 autoplay: {
@@ -19,7 +20,30 @@
                 },
                 pagination: {
                     el: ".swiper-pagination"
+                },
+                on: {
+                    init: function () {
+                        this.autoplay.stop();
+                    },
+                    slideChange: function () {
+                        let realIndex = this.realIndex;
+                        if (realIndex === 0) {
+                            this.autoplay.stop();
+                            video.currentTime = 0;
+                            video.play();
+                        }
+                    }
                 }
+            })
+
+            //처음 로딩시 autoplay되는 swiper가 멈추도록하고 비디오 재생
+            swiper.autoplay.stop();
+            video.play();
+
+            //비디오의 재생이 끝나면 다음 슬라이드로 넘어가기
+            video.addEventListener("ended", () => {
+                swiper.slideNext();
+                swiper.autoplay.start();
             })
         }
     </script>
@@ -33,7 +57,8 @@
                     <strong>8월 에어로위크</strong>
                     <p>8-10월 항공권 최대 97% 할인</p>
                 </div>
-                <div class="img-box"><video src="./images/slide-video-01.mp4"></video></div>
+                <div class="img-box"><video id="main-video" autoplay muted src="./images/slide-video-01.mp4"></video>
+                </div>
             </div>
             <div class="swiper-slide">
                 <div class="text-box">

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //1. 사람 객체 데이터 추출
+        const person = {
+            name:"홍길동",
+            age: 30,
+            hobbies: ["운동","독서","코딩"]
+        }
+
+        document.write(person.hobbies[0]+"<br>");
+
+        //2. 날씨 객체 데이터 추가
+        const weathers = {
+            kind: "rain",
+            items :["구름", "무지개"]
+        };
+        weathers.items.push("눈");
+        document.write(weathers.items+"<br>");
+
+        //3. items안에 내용을 items:구름, items:무지개, items:눈로 각각 출력하기
+        weathers.items.forEach(item =>{
+            document.write(`items:${item} <br>`);
+        })
+
+        //4. 객체 안에 배열안에 객체 넣기
+        const btsTeam ={
+            name:"bts",
+            albums:[
+                {title:"1집", subject:"Danger", content:"직설적인 랩과 멜로디"},
+                {title:"2집", subject:"wings", content:"피 땀 눈물"},
+            ]
+        }
+
+        document.write(btsTeam.albums[1].title+"<br>");
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
