@@ -42,16 +42,120 @@
     </style>
     <script>
         window.onload = function () {
+            //공통사항 추가옵션
             //왼쪽
-
+            const minusBtns = document.querySelectorAll(".goods-list .minus");
             //오른쪽
+            const plusBtns = document.querySelectorAll(".goods-list .plus");
             //합계를 보여줄 total
+            let total = document.querySelector(".total span");
+
+            //기본메뉴의 가격과 수량
+            const basePrice = 18000;
+            let baseCount = 1;
+            const baseSpan = document.querySelector(".basic-item-button span");
+            const baseMinus = document.querySelector(".basic-item-button .minus");
+            const basePlus = document.querySelector(".basic-item-button .plus");
+
+
             //시작하면 바로 보여줄 제품명
             const selectBasic = document.querySelector(".basic h2");
 
-            //보여줄 영역
+            //기본으로 선택된 제품명을 보여줄 영역
+            //영역에 기분 제품명 보여주기
             const showBasic = document.querySelector(".selected-basic");
             showBasic.innerHTML = selectBasic.textContent;
+
+            //기본 개수
+            baseSpan.innerHTML = baseCount;
+
+
+            //기본에 있는 plus를 클릭하면 개수(baseCount)증가
+            basePlus.addEventListener("click", () => {
+                baseCount++;
+                baseSpan.innerHTML = baseCount;
+                updateTotal();
+            })
+
+            //기본에 있는 minus를 클릭하면 개수감소
+            baseMinus.addEventListener("click", () => {
+                if (baseCount > 1) {
+                    baseCount--;
+                    baseSpan.innerHTML = baseCount;
+                    updateTotal();
+                }
+            })
+
+            //옵션의 플러스
+            plusBtns.forEach(btn => {
+                btn.addEventListener("click", () => {
+                    let spanCount = btn.previousElementSibling;
+                    let count = parseInt(spanCount.textContent);
+                    count++;
+                    spanCount.innerHTML = count;
+                    updateTotal();
+                })
+            })
+            //옵션의 마이너스
+            minusBtns.forEach(btn => {
+                btn.addEventListener("click", () => {
+                    let spanCount = btn.nextElementSibling;
+                    let count = parseInt(spanCount.textContent);
+                    if (count > 0) {
+                        count--;
+                        spanCount.innerHTML = count;
+                        updateTotal();
+                    }
+                })
+            })
+            //가격을 계산할 함수 만들기
+            function updateTotal() {
+                //기본제품 계산
+                let totalSum = basePrice * baseCount;
+                //옵션의 종류를 구별해줄 변수
+                let categorySelect = { chicken: [], side: [], drink: [] };
+
+                //옵션 선택
+                let lists = document.querySelectorAll(".goods-list");
+                lists.forEach(list => {
+                    let category = list.classList[1];
+                    console.log(category); //chicken, side, drink
+                    //각 옵션에 들어있는 항목을 저장할 변수
+                    let items = list.querySelectorAll(".item");
+                    items.forEach(item => {
+                        let goodsName = item.querySelector(".item-name span").innerHTML;
+                        let price = parseInt(item.querySelector(".item-name strong").innerHTML);
+                        let count = parseInt(item.querySelector(".button-wrap span").innerHTML);
+                        if (count > 0) {
+                            totalSum += price * count;
+                            categorySelect[category].push(goodsName);
+                        }
+                    })
+                    console.log(categorySelect);
+                    console.log(categorySelect.chicken)
+                })
+
+
+
+                total.textContent = totalSum;
+                updateOption(".goods-count-wrap .goods-selected", categorySelect.chicken);
+                updateOption(".side-count-wrap .goods-selected", categorySelect.side);
+                updateOption(".drink-count-wrap .goods-selected", categorySelect.drink);
+
+            }
+            //옵션에서 선택한 종류를 보여줄 함수
+            function updateOption(selector, cateItems) {
+                //옵션을 보여줄 영역선택
+                let selectorShow = document.querySelector(selector);
+                //그 옵션안에 해당하는 cateItems보여주기
+                if (cateItems.length > 0) {
+                    //그외 구하기
+                    let extra = cateItems.length - 1;
+                    selectorShow.innerHTML = `${cateItems[0]} ${extra > 0 ? `외 ${extra}개` : ""}`;
+                }
+            }
+            //기본 가격을 보이도록
+            updateTotal();
         }
     </script>
 </head>

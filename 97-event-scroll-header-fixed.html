@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/common.css">
+    <style>
+        header {
+            text-align: center;
+        }
+        .logo{
+            padding: 10px 0;
+        }
+        .nav-wrap {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 100px;
+            line-height: 70px;
+            background-color: skyblue;
+            transition: 0.1s;
+        }
+
+        .active {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #333;
+            color: #fff;
+
+            .logo-sub {
+                display: block;
+            }
+        }
+
+        .logo-sub {
+            display: none;
+        }
+
+        .logo-sub img {
+            max-width: 130px;
+        }
+
+        #main-menu {
+            display: flex;
+            gap: 50px;
+            font-size: 20px;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            let nav = document.querySelector(".nav-wrap");
+            //logo의 높이값 구하기
+            let logoHeight = document.querySelector(".logo").offsetHeight;
+            console.log(logoHeight);
+
+            function navFixed() {
+                //스크롤의 위치값
+                let sPos = document.documentElement.scrollTop;
+                console.log(sPos);
+                if(sPos>logoHeight){
+                    nav.classList.add("active");
+                }
+                else{
+                    nav.classList.remove("active");
+                }
+            }
+            document.addEventListener("scroll", navFixed);
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <h1 class="logo"><a href="#"><img src="./images/top-logo.png" alt=""></a></h1>
+        <div class="nav-wrap">
+            <p class="logo-sub"><a href="#"><img src="./images/footer-logo.png" alt=""></a></p>
+            <ul id="main-menu">
+                <li><a href="#">menu1</a></li>
+                <li><a href="#">menu2</a></li>
+                <li><a href="#">menu3</a></li>
+                <li><a href="#">menu4</a></li>
+                <li><a href="#">menu5</a></li>
+            </ul>
+        </div>
+    </header>
+    <main>
+        <section>
+            <h2 class="title">title1</h2>
+            <p>본문1</p>
+            <p>본문2</p>
+            <p>본문3</p>
+            <p>본문4</p>
+            <p>본문5</p>
+            <p>본문6</p>
+            <p>본문7</p>
+            <p>본문8</p>
+            <p>본문9</p>
+            <p>본문10</p>
+            <p>본문11</p>
+            <p>본문12</p>
+            <p>본문13</p>
+            <p>본문14</p>
+            <p>본문15</p>
+            <p>본문16</p>
+            <p>본문17</p>
+            <p>본문18</p>
+            <p>본문19</p>
+            <p>본문20</p>
+            <p>본문21</p>
+            <p>본문22</p>
+            <p>본문23</p>
+            <p>본문24</p>
+            <p>본문25</p>
+            <p>본문26</p>
+            <p>본문27</p>
+            <p>본문28</p>
+            <p>본문29</p>
+            <p>본문30</p>
+            <p>본문31</p>
+            <p>본문32</p>
+            <p>본문33</p>
+            <p>본문34</p>
+            <p>본문35</p>
+            <p>본문36</p>
+            <p>본문37</p>
+            <p>본문38</p>
+            <p>본문39</p>
+            <p>본문40</p>
+            <p>본문41</p>
+            <p>본문42</p>
+            <p>본문43</p>
+            <p>본문44</p>
+            <p>본문45</p>
+            <p>본문46</p>
+            <p>본문47</p>
+            <p>본문48</p>
+            <p>본문49</p>
+            <p>본문50</p>
+            <p>본문51</p>
+            <p>본문52</p>
+            <p>본문53</p>
+            <p>본문54</p>
+            <p>본문55</p>
+            <p>본문56</p>
+            <p>본문57</p>
+            <p>본문58</p>
+            <p>본문59</p>
+            <p>본문60</p>
+            <p>본문61</p>
+            <p>본문62</p>
+            <p>본문63</p>
+            <p>본문64</p>
+            <p>본문65</p>
+            <p>본문66</p>
+            <p>본문67</p>
+            <p>본문68</p>
+            <p>본문69</p>
+            <p>본문70</p>
+            <p>본문71</p>
+            <p>본문72</p>
+            <p>본문73</p>
+            <p>본문74</p>
+            <p>본문75</p>
+            <p>본문76</p>
+            <p>본문77</p>
+            <p>본문78</p>
+            <p>본문79</p>
+            <p>본문80</p>
+            <p>본문81</p>
+            <p>본문82</p>
+            <p>본문83</p>
+            <p>본문84</p>
+            <p>본문85</p>
+            <p>본문86</p>
+            <p>본문87</p>
+            <p>본문88</p>
+            <p>본문89</p>
+            <p>본문90</p>
+            <p>본문91</p>
+            <p>본문92</p>
+            <p>본문93</p>
+            <p>본문94</p>
+            <p>본문95</p>
+            <p>본문96</p>
+            <p>본문97</p>
+            <p>본문98</p>
+            <p>본문99</p>
+            <p>본문100</p>
+        </section>
+        <section>
+            <h2 class="title">title2</h2>
+            <p>본문1</p>
+            <p>본문2</p>
+            <p>본문3</p>
+            <p>본문4</p>
+            <p>본문5</p>
+            <p>본문6</p>
+            <p>본문7</p>
+            <p>본문8</p>
+            <p>본문9</p>
+            <p>본문10</p>
+            <p>본문11</p>
+            <p>본문12</p>
+            <p>본문13</p>
+            <p>본문14</p>
+            <p>본문15</p>
+            <p>본문16</p>
+            <p>본문17</p>
+            <p>본문18</p>
+            <p>본문19</p>
+            <p>본문20</p>
+            <p>본문21</p>
+            <p>본문22</p>
+            <p>본문23</p>
+            <p>본문24</p>
+            <p>본문25</p>
+            <p>본문26</p>
+            <p>본문27</p>
+            <p>본문28</p>
+            <p>본문29</p>
+            <p>본문30</p>
+            <p>본문31</p>
+            <p>본문32</p>
+            <p>본문33</p>
+            <p>본문34</p>
+            <p>본문35</p>
+            <p>본문36</p>
+            <p>본문37</p>
+            <p>본문38</p>
+            <p>본문39</p>
+            <p>본문40</p>
+            <p>본문41</p>
+            <p>본문42</p>
+            <p>본문43</p>
+            <p>본문44</p>
+            <p>본문45</p>
+            <p>본문46</p>
+            <p>본문47</p>
+            <p>본문48</p>
+            <p>본문49</p>
+            <p>본문50</p>
+            <p>본문51</p>
+            <p>본문52</p>
+            <p>본문53</p>
+            <p>본문54</p>
+            <p>본문55</p>
+            <p>본문56</p>
+            <p>본문57</p>
+            <p>본문58</p>
+            <p>본문59</p>
+            <p>본문60</p>
+            <p>본문61</p>
+            <p>본문62</p>
+            <p>본문63</p>
+            <p>본문64</p>
+            <p>본문65</p>
+            <p>본문66</p>
+            <p>본문67</p>
+            <p>본문68</p>
+            <p>본문69</p>
+            <p>본문70</p>
+            <p>본문71</p>
+            <p>본문72</p>
+            <p>본문73</p>
+            <p>본문74</p>
+            <p>본문75</p>
+            <p>본문76</p>
+            <p>본문77</p>
+            <p>본문78</p>
+            <p>본문79</p>
+            <p>본문80</p>
+            <p>본문81</p>
+            <p>본문82</p>
+            <p>본문83</p>
+            <p>본문84</p>
+            <p>본문85</p>
+            <p>본문86</p>
+            <p>본문87</p>
+            <p>본문88</p>
+            <p>본문89</p>
+            <p>본문90</p>
+            <p>본문91</p>
+            <p>본문92</p>
+            <p>본문93</p>
+            <p>본문94</p>
+            <p>본문95</p>
+            <p>본문96</p>
+            <p>본문97</p>
+            <p>본문98</p>
+            <p>본문99</p>
+            <p>본문100</p>
+        </section>
+    </main>
+</body>
+
+</html>
