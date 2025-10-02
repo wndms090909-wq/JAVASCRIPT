@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/common.css">
+    <style>
+        header {
+            position: fixed;
+            width: 100%;
+            line-height: 100px;
+            background: rgba(255, 255, 255, 0.7);
+        }
+
+        .gnb {
+            display: flex;
+            gap: 50px;
+            font-size: 20px;
+            padding: 0 20px;
+        }
+
+        .main-slider-wrap {
+            height: 700px;
+            background: #ccc;
+        }
+
+        main section {
+            height: 100vh;
+            padding: 100px;
+            font-size: 100px;
+        }
+
+        main .section1 {
+            background: lavender;
+        }
+
+        main .section2 {
+            background: lemonchiffon;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            let menus = document.querySelectorAll(".gnb>li>a");
+            let sections = document.querySelectorAll("section");
+
+            menus.forEach((m, i) => {
+                m.addEventListener("click", (e) => {
+                    e.preventDefault();
+
+                    //섹션의 위치값
+                    let topPos = sections[i].offsetTop;
+                    console.log(topPos);
+
+                    //윈도우의 스크롤 이동시키기
+                    window.scrollTo({
+                        //위치
+                        top: topPos,
+                        //동작
+                        behavior: "smooth"
+                    })
+                })
+            })
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <ul class="gnb">
+            <li><a href="#">section1</a></li>
+            <li><a href="#">section2</a></li>
+        </ul>
+    </header>
+    <div class="main-slider-wrap"></div>
+    <main>
+        <section class="section1">section1</section>
+        <section class="section2">section2</section>
+    </main>
+</body>
+
+</html>

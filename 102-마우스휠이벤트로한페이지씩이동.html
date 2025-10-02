@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/common.css">
+    <style>
+        header {
+            line-height: 100px;
+            background-color: rgba(255, 255, 255, 0.8);
+            position: fixed;
+            width: 100%;
+        }
+
+        footer {
+            height: 200px;
+            background-color: #333;
+            color: #fff;
+        }
+
+        .main-slider-wrap {
+            height: 600px;
+            background-color: lavender;
+        }
+
+        section {
+            height: 100vh;
+            padding-top: 100px;
+        }
+
+        section:nth-child(1) {
+            background-color: lightblue;
+        }
+
+        section:nth-child(2) {
+            background-color: lemonchiffon;
+        }
+
+        section:nth-child(3) {
+            background-color: lightcoral;
+        }
+
+        section:nth-child(4) {
+            background-color: lightskyblue;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            //마우스휠 이벤트가 발생되었을경우 스크롤의 위치를 저장할 변수
+            let moveTop = 0;
+            //섹션을 저장할 변수
+            let sections = document.querySelectorAll("section");
+            //메인슬라이드 영역을 저장할 변수
+            let slider = document.querySelector(".main-slider-wrap");
+            //footer 영역을 저장할 변수
+            let footer = document.querySelector("footer");
+
+            //.main-slider-wrap
+            // ->section1->section2->section3->section4
+            //->footer
+            let moveAreas = [slider, ...sections, footer];
+            console.log(moveAreas);
+            //각각의 영역에서 마우스휠 이벤트 주기
+            moveAreas.forEach((area, i, arr) => {
+                console.log(area.offsetTop);
+                area.addEventListener("wheel", (e) => {
+                    console.log(e.deltaY, e.detail, e.wheelDelta);
+                    //최근브라우저 e.deltaY 아래로는 100, 위는 -100
+                    //이전브라우저 e.wheelDelta 아래 -120, 위 120
+                    //파이어폭스 e.detail 아래 3, 위-3
+
+                    let delta = e.deltaY || e.detail;
+                    if (e.deltaY > 0) {
+                        //다음영역이 있는지 체크하여 있으면, 다음영역의 위치값 가져오기
+                        if (arr[i + 1]) {
+                            moveTop = arr[i + 1].offsetTop;
+                        }
+                    }
+                    else {
+                        //이전 영역이 있는지 체크하여, 이전 영역의 위치값 가져오기
+                        if (arr[i - 1]) {
+                            moveTop = arr[i - 1].offsetTop;
+                        }
+
+                    }
+                    window.scrollTo({
+                        top: moveTop,
+                        behavior: "smooth"
+                    })
+                })
+            })
+        }
+    </script>
+</head>
+
+<body>
+    <header>logo</header>
+    <div class="main-slider-wrap"></div>
+    <main>
+        <section class="section1">
+            <h2 class="title">title1</h2>
+        </section>
+        <section class="section2">
+            <h2 class="title">title2</h2>
+        </section>
+        <section class="section3">
+            <h2 class="title">title3</h2>
+        </section>
+        <section class="section4">
+            <h2 class="title">title4</h2>
+        </section>
+    </main>
+    <footer>서울시</footer>
+</body>
+
+</html>

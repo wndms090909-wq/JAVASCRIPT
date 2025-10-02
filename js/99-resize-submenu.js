@@ -21,8 +21,16 @@ siteInit();
 
 //윈도우의 너비가 변경되면 윈도우의 너비값 받아오기
 window.addEventListener("resize", () => {
+    let preWidth = wWidth;
+   
     siteInit();
+     //모바일버전에서 메뉴를 펼친상태에서 다른 버전으로 윈도우가 리사이즈되었다가
+    //다시 모바일버전으로 오면 펼쳐진 nav-wrap이 그대로 보이는 걸 없앰
+    if(preWidth> 768 && wWidth<=768){
+        navWrap.style.left = "-120%";
+    }
 
+    //모든 서브는 초기화
     subMenu.forEach(sub => {
         sub.style.height = "";
         sub.classList.remove("active");
