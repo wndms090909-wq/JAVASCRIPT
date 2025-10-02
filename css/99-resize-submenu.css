@@ -26,25 +26,31 @@ header .inner{
 }
 .main-menu>li{
     position: relative;
-    background-color: pink;
+    /* background-color: pink; */
 }
 .main-menu>li>a{
     display: block;
     padding: 10px 30px;
-    /* background-color: pink; */
+    background-color: pink;
 }
 .gnb{
     display: flex;
     gap: 10px;
 }
-
+/* 트랜지션 주기위해 none안씀 */
 .depth1{
     position: absolute;
     background-color: lightseagreen;
     width: 100%;
     text-align: center;
     line-height: 2;
-    display: none;
+    /* display: none; */
+    height: 0;
+    overflow: hidden;
+    transition: 0.5s;
+}
+.depth1.active{
+    height: 200px;
 }
 
 @media screen and (max-width:768px) {
@@ -95,6 +101,8 @@ header .inner{
 
     .depth1{
         position: static;
+        /* height: auto; */
+        transition: 0.3s;
     }
     .close-btn{
         position: absolute;
