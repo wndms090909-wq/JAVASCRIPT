@@ -76,7 +76,7 @@ mainLinks[0].addEventListener("click", (e) => {
 
 // mainLinks.forEach(main => {
 //     main.addEventListener("click", () => {
-//         subMenu.forEach((sub) =>{
+//         subMenu.forEach(sub => {
 //             subMenu.classList.add("active");
 //         })
 
