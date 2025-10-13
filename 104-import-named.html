@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="module">
+        //named.js에서 내보낸 변수, 함수등을 가져올때는 {}, 함수이름을 사용한다
+        //많이씀
+        // import {add,sub,num,user} from "./js/named.js";
+        // console.log(add(1,10));
+        // console.log(sub(10,5));
+        // console.log(num);
+        // console.log(user.name);
+
+        //볊칭 사용하기 (이름 바꾸기)
+        import {add as plus, sub as minus} from "./js/named.js";
+        console.log(plus(11,22));
+        console.log(minus(22,11));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

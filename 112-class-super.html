@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //부모 클래스
+        //이름, 나이
+        //메서드 - intro 나의 이름은 누구이고, 나이는 몇살입니다.
+
+        class Person{
+            constructor(name1,age1){
+                this.name = name1;
+                this.age = age1;
+            }
+            intro(){
+                console.log(`나의 이름은 ${this.name}이고, 나이는 ${this.age}살 입니다`)
+            }
+        }
+
+        let kim = new Person ("홍길동", 22);
+        kim.intro();
+
+         //자식 클래스
+        //이름, 나이는 부모로부터 상속 받아서 사용
+        //추가로 직업 속성 추가
+        //메서드 - intro 나의 이름은 누구이고, 나이는 0살이고 직업은 00입니다
+        class Worker extends Person{
+            constructor(name1,age1,job1){
+                super(name1,age1);
+                this.job = job1;
+            }
+            intro(){
+                super.intro();
+                console.log(`나의 이름은 ${this.name}이고, 나이는 ${this.age}살이고, 직업은 ${this.job}입니다`);
+            }
+        }
+        let park = new Worker ("박철수",30,"프론트엔드개발자");
+        park.intro();
+    </script>
+</head>
+<body>
+    <h1>class - super</h1>
+    <p>부모의 속성과 메서드를 상속받거나, 사용할때</p>
+</body>
+</html>

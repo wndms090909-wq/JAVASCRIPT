@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //부모클래스 Animal
+        //속성 kind, speed
+        //메서드 run(): 00는 속도가 얼마입니다
+        class Animal {
+            constructor(kind1, speed1) {
+                this.kind = kind1;
+                this.speed = speed1;
+            }
+            run() {
+                console.log(`${this.kind}는 속도가 ${this.speed}입니다`);
+            }
+        }
+        let cat = new Animal("고양이", 3);
+        cat.run()
+
+        //자식클래스 Bugs
+        //속성 kind, speed, legs
+        //메서드 run():00는 다리가 몇개이고, 속도가 얼마입니다
+        class Bugs extends Animal {
+            constructor(kind1, speed1, legs1) {
+                super(kind1, speed1);
+                this.legs = legs1
+            }
+            run() {
+                super.run();
+                console.log(`${this.kind}는 속도가 ${this.speed}이고 다리개수는 ${this.legs}입니다`)
+            }
+        }
+        let ladyBug = new Bugs("무당벌레", 1, 6);
+        ladyBug.run();
+
+        //무당벌레, 1,6
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

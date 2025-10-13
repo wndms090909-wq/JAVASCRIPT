@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //es6이전버전
+        //생성자함수+프로토타입
+        //이름, 나이 변수 저장
+        function Person(name1,age1){
+            this.name = name1;
+            this.age=age1;
+        }
+
+        Person.prototype.intro=function(){
+            console.log(`안녕하세요 저는 ${this.name}이고, ${this.age}살 입니다`)
+        }
+
+        let man = new Person("홍길동", 20);
+        man.intro();
+    </script>
+</head>
+<body>
+    <h1>class</h1>
+    <p>es6버전부터 생김</p>
+    <p>클래스 - 속성(변수)과 메서드(함수)의 집합체</p>
+    <pre>
+        class 클래스명 {
+            constructor(매개변수){
+                속성 = 값;
+                this.속성 = 값;
+            }
+            매서드명(매개변수){
+                //동작 실행할 문장;
+            }
+        }
+    </pre>
+    <p>이전버전 - 생성자함수 + 포로토타입</p>
+    <pre>
+        function 클래스명(매개변수){
+            this.속성 = 값;
+        }
+        클래스명.prototype.매서드명= function(매개변수){
+            //동작 실행할 문장;
+        }
+    </pre>
+</body>
+</html>

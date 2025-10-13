@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        class Person {
+            constructor(name1, age1){
+                this.name = name1;
+                this.age = age1;
+            }
+            intro(){
+                console.log(`안녕 저는 ${this.name}이고, 나이는${this.age}살`)
+            }
+        }
+
+        let man = new Person("김철수", 30);
+        man.intro();
+        let women = new Person("김영희", 20);
+        women.intro();
+        //클래스는 여러번 재사용이 가능하다
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

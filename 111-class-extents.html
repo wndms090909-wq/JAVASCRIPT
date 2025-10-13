@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        class Person {
+            //속성변수
+            constructor(name1, age1, tel1, city1) {
+                this.name = name1;
+                this.age = age1;
+                this.tel = tel1
+                this.city = city1;
+            }
+            //메서드
+            nextYearAge() {
+                this.age++
+                return this.age;
+            }
+        }
+        let kim = new Person("김철수", 20, "010-1111-2222", "서울");
+        console.log(kim);
+        console.log(kim.nextYearAge());
+
+        //Person 클래스의 속성을 모두 가지고 있는 student 클래스 만들기
+        //나는 시티에서 태어났고, 나이는 몇살이야~
+        class Student extends Person {
+            intro() {
+                console.log(`나는 ${this.city}에서 태어났고 나이는 ${this.age}살이야`)
+            }
+        }
+        let lee = new Student("박세리", 40, "010-2222-3333", "부산");
+        console.log(lee);
+        console.log(lee.name);
+        lee.intro();
+        console.log(lee.nextYearAge());
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
