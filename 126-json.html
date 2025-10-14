@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        async function fetchDate() {
+            try {
+                //fetch로 외부 데이터 호출하기
+                let respond = await fetch("data.json");
+                console.log(respond);
+                let data = await respond.json();
+                console.log(data);
+                console.log(data.name);
+                console.log(data.hobby[1]);
+            } catch (error) {
+                //에러처리
+                console.log(error);
+            }
+        }
+        fetchDate();
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

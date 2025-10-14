@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function greet(name, callback){
+            console.log(`1. 안녕 ${name}`);
+            callback();
+        }
+        //콜백자리에 함수가 들어감
+        greet("홍길동", ()=>{
+            console.log("2. 반가워");
+        })
+        console.log("3. 잘가!");
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //1초뒤에 콘솔에 "1초"가 출력되는 함수
+        function msg() {
+            return new Promise((resovle) => {
+                setTimeout(() => resovle("1초"), 1000)
+            })
+        }
+        async function run() {
+            let result = await msg();
+            console.log(result);
+        }
+        run();
+        //msg가 다 아직 리딩이 안되서 처음엔 Promise함수만 콘솔에 보인다
+        //async(비동기)하고 await(기다리겠다)를 추가
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
