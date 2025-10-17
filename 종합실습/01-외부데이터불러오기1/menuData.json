@@ -1,0 +1,12 @@
+[
+    {"category":"kor", "name":"김밥"},
+    {"category":"jp", "name":"스시"},
+    {"category":"kor", "name":"비빔밥"},
+    {"category":"ch", "name":"짜장면"},
+    {"category":"kor","name":"라면"},
+    {"category":"jp","name":"장어덮밥"},
+    {"category":"kor","name":"오징어"},
+    {"category":"ch","name":"짬뽕"},
+    {"category":"jp","name":"우동"},
+    {"category":"ch","name":"딤섬"}
+]
