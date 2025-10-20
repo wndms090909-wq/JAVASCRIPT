@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .dropdown {
+            display: none;
+            border: 1px solid #ccc;
+            width: 30%;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>검색어 자동완성</h1>
+    <div class="search-box">
+        <input type="text" id="search" placeholder="검색어를 입력하세요" autocomplete="off">
+        <div class="dropdown"></div>
+    </div>
+
+    <script>
+        //DOM
+        let memoInput = document.querySelector("#search");
+        let dropdown = document.querySelector(".dropdown");
+
+        //input에 커서가 들어가면 dropdown에 그동안 입력한 검색어를 보여주기
+        memoInput.addEventListener("click", showDropdown);
+        //input에 데이터를 입력하면 입력된 데이터를 localStorage에 저장하기
+        memoInput.addEventListener("change", saveSearch);
+        //입력한 데이터를 저장할 배열
+        let history = [];
+
+        //searchHistory키로 저장하기
+        history = JSON.parse(localStorage.getItem("searchHistory")) || [];
+
+
+        //문서를 클릭하면 .search-box가 사라지도록
+        document.addEventListener("click", (e) => {
+            if(!e.target.closest(".search-box")) dropdown.style.display = "none";
+        })
+
+        function showDropdown() {
+            console.log("커서가 클릭되었습니다");
+            dropdown.innerHTML = "";
+            history.forEach(item => {
+                let pTag = document.createElement("p");
+                pTag.textContent = item;
+                dropdown.append(pTag);
+            })
+            dropdown.style.display = "block";
+        }
+
+        function saveSearch() {
+            let value = memoInput.value.trim();
+            // localStorage.setItem("memo", value);
+
+            //중복제거
+            history = history.filter(item => item !== value);
+            history.unshift(value);
+            localStorage.setItem("searchHistory", JSON.stringify(history));
+
+            //입력된 value 값이 빈칸으로
+            memoInput.value = "";
+        }
+    </script>
+</body>
+
+</html>

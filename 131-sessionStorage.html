@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let name = "홍길동";
+        let age = 20;
+        //1. sessionStorage 데이터 저장하기
+        sessionStorage.setItem("userName", name);
+        sessionStorage.setItem("userAge", age);
+        //2. sessionStorage에 저장된 데이터 불러오기
+        let uName = sessionStorage.getItem("userName");
+        console.log(uName);
+
+        //3. sessionStorage에 저장된 데이터 삭제하기
+        sessionStorage.removeItem("userName");
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

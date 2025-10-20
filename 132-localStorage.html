@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //1. storage에 데이터 저장
+        //일반변수 저장
+        let uName = "김철수"
+        localStorage.setItem("uName", uName);
+
+        //1-2 객체 생성하여 저장하기
+        const user = {
+            id: 1,
+            name: "이영희",
+            job: "프로그래머"
+        }
+
+        //오브젝트를 저장할 수 있는 json형식으로 변환해서 저장해야한다
+        //JSON.stringify(user) JSON 형태로 변환시킬때 사용
+        localStorage.setItem("user", JSON.stringify(user));
+
+        //2. 저장된 데이터 불러오기
+        //let user2 = localStorage.getItem("user");
+
+        //JSON.stringify로 저장한 데이터를 다시 객체로 복원 시켜서 사용하기
+        //JSON.parse()
+        let user2 = JSON.parse(localStorage.getItem("user"));
+        console.log(user2);
+        console.log(user2.name);
+
+        //1-3 배열에 데이터 저장하기
+        let num = [1,2,3];
+        localStorage.setItem("num", JSON.stringify(num));
+
+        let todos = [
+            {id:1, text:"자바스크립트 복습", done:false},
+            {id:2, text:"자리바꾸기", done:false}
+        ]
+
+        //
+        localStorage.setItem("todos", JSON.stringify(todos));
+        let todosLoad = JSON.parse(localStorage.getItem("todos"));
+
+        todosLoad.push({id:3, text:"공부 계획짜기", done:false});
+
+        localStorage.setItem("todos", JSON.stringify(todosLoad));
+
+        sessionStorage.setItem("sName", "홍길동");
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

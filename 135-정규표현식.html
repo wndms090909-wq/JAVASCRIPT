@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //1. 숫자를 찾아서 배열에 넣기
+        let str1 = "오늘은 2025년 10월 20일입니다";
+        //정규표현식 숫자 1개 이상인 요소를 찾아서 배열에 넣기
+        //패턴 숫자,문자,한글
+        //플래그 전역-g(global), 대소문자구분없음-i, 여러줄처리-m
+
+        //리터럴 방식
+        // let 패턴이름 = /패턴/플래그
+        // let pattern = /\d+/g; - 옛날 방식?
+        //객체생성방식 - es6
+        // let 패턴이름 = new RegExp ("패턴", "플래그")
+        let pattern = new RegExp("\\d+", "g");
+
+        let result = str1.match(pattern);
+        console.log(result);
+
+        //2. 영문자 찾기
+        //영문자 대소문자 구분없이 찾기
+        //\\w+ 영문자, _ , 숫자 포함
+        let str2 = "Hi Javascript, version 6 버전";
+        // let pattern2 = new RegExp("[a-z]+", "gi"); 대소문자 다 찾는법
+        let pattern2 = new RegExp("[a-z A-Z]+", "g");
+        let result2 = str2.match(pattern2);
+        console.log(result2);
+
+        //3. 전화번호 찾기
+        //국번{2자리~3자리}-중간번호{3자리~4자리}-마지막번호{4자리}
+        let str3 = "고객번호: 02-123-4567, 010-1111-2222, 555";
+        //{안에 숫자} - 2자리에서 3자리 찾아라
+        let pattern3 = new RegExp("\\d{2,3}-\\d{3,4}-\\d{4}", "g");
+        let result3 = str3.match(pattern3);
+        console.log(result3);
+
+        //4. 이메일 찾기
+        //아이디@호스팅주소.com
+        //아이디@호스팅주소.co.kr
+        //아이디: 영문자, 숫자, _ , -
+        //호스팅주소: 영문자, 숫자
+        //.영문자: 영문자
+        let str4 = "문의: admin@naver.com, custom_center@dothome.co.kr";
+        //{2,} - 2개 이상, + - 1개이상 보여줌 . - [.]을 포함한 문자열을 구해와라
+        let pat = "[a-z A-Z 0-9 _ -]+@[a-z A-Z.]+\\.[a-z A-Z]{2,}";
+        let pattern4 = new RegExp(pat,"g");
+        let result4 = str4.match(pattern4);
+        console.log(result4);
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
